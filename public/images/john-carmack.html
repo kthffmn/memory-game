@@ -1,0 +1,3222 @@
+<!doctype html>
+<html lang="en" itemscope id="" class="" xmlns:hx="http://purl.org/NET/hinclude">
+
+
+<head><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vg8OUFFACgYBUVZQDw=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),u=c.length,f=i(a,o,r),d=0;u>d;d++)c[d].apply(f,n);return f}function a(t,e){u[t]=s(t).concat(e)}function s(t){return u[t]||[]}function c(){return n(e)}var u={};return{on:a,emit:e,create:c,listeners:s,_events:u}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(u){try{r("ierr",[u,(new Date).getTime(),!0])}catch(f){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(4),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(u){"stack"in u&&(t(5),t(3),"addEventListener"in window&&t(1),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(2),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:4,2:7,3:5,4:18,5:6,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],4:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:18,2:19,ee:"QJf3ax",gos:"7eSDFh"}],5:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:19,2:18,ee:"QJf3ax"}],6:[function(t,e){function n(t,e,n){var r=t[0];"string"==typeof r&&(r=new Function(r)),t[0]=o(r,"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:19,2:18,ee:"QJf3ax"}],7:[function(t,e){function n(){c.inPlace(this,d,"fn-")}function r(t,e){c.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}var i=t("ee").create(),a=t(1),s=t(2),c=s(i),u=s(a),f=window.XMLHttpRequest,d=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=i,window.XMLHttpRequest=function(t){var e=new f(t);try{i.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",function(t,e){return e}),e.addEventListener("readystatechange",n,!1)}catch(r){try{i.emit("internal-error",[r])}catch(o){}}return e},window.XMLHttpRequest.prototype=f.prototype,c.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),i.on("send-xhr-start",r),i.on("open-xhr-start",r)},{1:4,2:19,ee:"QJf3ax"}],8:[function(t){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,u="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(u);if(f&&(r.rxSize=f),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(n.cat=d.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r,this.startTime])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,u=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var u=e(o);u&&(r.txSize=u)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",[e])}catch(r){}}};for(var f=0;c>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:9,3:7,4:4,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],9:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&c&&c.body){p.proto="https"===d.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=c.createElement("script");e.src=p.proto+t.agent,c.body.appendChild(e)}}function r(){"complete"===c.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,c=s.document,u="addEventListener",f="attachEvent",d=(""+location).split("?")[0],p=e.exports={offset:i(),origin:d,features:{}};c[u]?(c[u]("DOMContentLoaded",o,!1),s[u]("load",n,!1)):(c[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],18:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],19:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,u;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){f([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return u=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,u],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,u(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,u="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,u?s+o:o,i,s,t))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){f([o,e,n,r])}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){f([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function f(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:18,ee:"QJf3ax"}]},{},["G9z0Bl",3,8]);</script>
+
+  <title>E3 2011: John Carmack talks Wii U, PlayStation Vita, and next-gen Rage - GameSpot</title>
+
+  <meta name="description" content="Q&amp;A: id Software&#039;s technology chief discusses the possibilities raised by Nintendo&#039;s new console and how a sequel to the postapocalyptic shooter might be &quot;cross-generational.&quot;">
+    <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+            <script type="text/javascript">var WRInitTime = Date.now();</script>
+      
+    <meta name="application-name" content="GameSpot"/>
+  <meta name="msapplication-TileColor" content="#26292B"/>
+  <meta name="msapplication-TileImage" content="http://static1.gamespot.com/bundles/gamespotsite/images//win8pin.png"/>
+
+  
+  
+    <meta name="userAuthState" content="noUser"/>
+
+            <meta name="modal-cdn-url" content="http://static.gamespot.com/js/modals.json">
+      
+      <meta name='js-sort-filter-text' content='yes'>
+  
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+    <meta itemprop="cdnHost" content="http://static.gamespot.com">
+      <link rel="shortcut icon" href="http://static2.gamespot.com/bundles/gamespotsite/images/favicon.ico" />
+
+     <link rel="apple-touch-icon-precomposed" href="http://static3.gamespot.com/bundles/gamespotsite/images/apple-touch-icon-precomposed.png">
+
+  <meta id="site-id-meta" name="site-id-meta" itemprop="site-id" content="6">
+
+    <meta id="view-guid-meta" name="view-guid-meta" itemprop="view-guid" content="98a4837c-a456-4386-a852-e061ba74452c">
+
+
+              
+              
+    
+              
+    <meta id='ad-settings'
+          class='js-post-render-tracking-consumer '
+          itemprop="ad-settings"
+          content="{&quot;service&quot;:&quot;dart&quot;,&quot;client&quot;:&quot;xfp&quot;,&quot;deferred&quot;:true,&quot;load_in_head&quot;:&quot;gpt&quot;,&quot;single_request&quot;:true,&quot;disable_initial_load&quot;:true,&quot;enable_callback&quot;:true,&quot;enable_collapse_empty_divs&quot;:true,&quot;enable_guilt&quot;:true,&quot;script&quot;:&quot;\/\/www.googletagservices.com\/tag\/js\/gpt.js&quot;,&quot;unit_name&quot;:&quot;\/8264\/aw-gamespot\/news&quot;,&quot;target_params&quot;:{&quot;ptype&quot;:&quot;news_article&quot;,&quot;firstpg&quot;:&quot;0&quot;,&quot;session&quot;:&quot;e&quot;,&quot;user&quot;:&quot;anon&quot;,&quot;cid&quot;:&quot;gs-article-6318725&quot;,&quot;game&quot;:&quot;rage-(2011)&quot;,&quot;franchise&quot;:[],&quot;publisher&quot;:[&quot;id-software&quot;],&quot;rdate&quot;:&quot;bp52&quot;,&quot;collection&quot;:&quot;&quot;,&quot;subcollection&quot;:&quot;&quot;,&quot;con&quot;:[&quot;pc&quot;,&quot;ps3&quot;,&quot;xbox-360&quot;,&quot;playstation-vita&quot;,&quot;wii-u&quot;]},&quot;mapped_units&quot;:{&quot;interstitial&quot;:{&quot;outOfPage&quot;:true},&quot;skin_top&quot;:{&quot;size&quot;:[[1600,1000]],&quot;target&quot;:{&quot;pos&quot;:&quot;top&quot;}},&quot;leader_plus_top&quot;:{&quot;size&quot;:[[970,250],[970,66],[728,90],[970,90]],&quot;target&quot;:{&quot;pos&quot;:&quot;top&quot;}},&quot;incontent_top&quot;:{&quot;size&quot;:[[771,281],[641,321]],&quot;target&quot;:{&quot;pos&quot;:&quot;top&quot;}},&quot;mpu_top&quot;:{&quot;size&quot;:[[300,250]],&quot;target&quot;:{&quot;pos&quot;:&quot;top&quot;}},&quot;mpu_bottom&quot;:{&quot;size&quot;:[[300,250]],&quot;target&quot;:{&quot;pos&quot;:&quot;bottom&quot;}},&quot;leader_bottom&quot;:{&quot;size&quot;:[[728,90],[970,66]],&quot;target&quot;:{&quot;pos&quot;:&quot;bottom&quot;}},&quot;companion_ad&quot;:{&quot;size&quot;:[[1,1]]}},&quot;region&quot;:&quot;us&quot;}"
+    />
+
+                      <meta id="qualtrics-settings"
+      itemprop="qualtrics-settings"
+      content="{&quot;id&quot;:&quot;ZN_aah4Vz47v491vLf&quot;,&quot;script&quot;:&quot;\/\/zn_aah4vz47v491vlf-cbs.siteintercept.qualtrics.com\/WRSiteInterceptEngine\/&quot;}" />
+    
+    <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@GameSpot">
+      <meta name="twitter:creator" content="@GameSpot">
+  
+  		<meta property="og:image" content="http://static4.gamespot.com/uploads/screen_kubrick/mig/9/4/4/0/2249440-carmack_crop404_screen.jpg"/>
+	
+        	<meta property="og:title" content="E3 2011: John Carmack talks Wii U, PlayStation Vita, and next-gen Rage"/>
+  	        <meta property="og:description" content="Q&amp;A: id Software&#039;s technology chief discusses the possibilities raised by Nintendo&#039;s new console and how a sequel to the postapocalyptic shooter might be &quot;cross-generational.&quot;
+"/>
+      
+  <meta property="og:site_name" content="GameSpot"/>
+
+      <meta property="og:type" content="article"/>
+  
+
+      <meta property="og:url" content="http://www.gamespot.com/articles/e3-2011-john-carmack-talks-wii-u-playstation-vita-and-next-gen-rage/1100-6318725/"/>
+  
+
+                              <meta id="ZeroClipBoardSwf" itemprop="ZeroClipBoardSwf" name="ZeroClipBoardSwf" content="/bundles/phoenixsite/js/libs/zeroclipboard/ZeroClipboard.swf?ac0a4c43e7e8e651d3b51c3c67cc8f1a">
+      
+
+  <meta itemprop="jsParameters" content="{&quot;livefyre_script_url&quot;:&quot;http:\/\/zor.livefyre.com\/wjs\/v3.0\/javascripts\/livefyre.js&quot;,&quot;login_url&quot;:&quot;http:\/\/auth.gamespot.com\/login\/&quot;,&quot;logout_url&quot;:&quot;http:\/\/auth.gamespot.com\/logout\/&quot;}" >
+
+  <meta itemprop="notifications-host" content="10.15.69.143">
+
+        <script src="http://static5.gamespot.com/js/compiled/header_js.js?ac0a4c43e7e8e651d3b51c3c67cc8f1a" type="text/javascript"></script>
+  
+      <script type="text/javascript">document.documentElement.className+=" hinclude-loading";</script>
+  
+        
+<script type="text/javascript" src="//fonts.cbsi.com/ztl5zru.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+
+  
+        <!--[if !IE]> --><link id="skin-color" href="http://static1.gamespot.com/bundles/gamespotsite/css/gamespot_white-e073a17a729cd472766661b301a2eb2c.css" rel="stylesheet"><!-- <![endif]--><!--[if IE]><link id="skin-color-0" href="http://static2.gamespot.com/bundles/gamespotsite/css/gamespot_white_split1-e073a17a729cd472766661b301a2eb2c.css" rel="stylesheet"><link id="skin-color-1" href="http://static3.gamespot.com/bundles/gamespotsite/css/gamespot_white_split2-e073a17a729cd472766661b301a2eb2c.css" rel="stylesheet"><![endif]-->
+<meta itemprop="richTextEditorCSS" content="http://static4.gamespot.com/bundles/gamespotsite/css/wysiwyg_white-e073a17a729cd472766661b301a2eb2c.css">
+
+      <meta id="kCode" itemprop="kCode" name="kCode" content="/contra-1987/cheats/">
+
+                        <script id="ad-service-client" src="//www.googletagservices.com/tag/js/gpt.js" type="text/javascript"></script>    
+                  <style>
+body { overflow-x: visible; }
+body.skin-yes { overflow-x: hidden; }
+/* Temporary last minute on Friday fix for headers being cut off on smaller screens */
+@media only screen and (max-width: 1209px) {
+  .pod-title>h4,
+  .pod-title>h4>h4 {
+    font-size: 15px;
+    padding-right: 5px;
+  }
+}
+
+/* Update to event hubs */
+.body-event--pax-2014 .promo-strip--event {
+background: #000 url(http://static2.gamespot.com/uploads/original/469/4693985/2640080-paxprime.jpg) center center no-repeat;
+}
+
+.body-event--eb-expo-2014 .promo-strip--event {
+background: #000 url(http://static4.gamespot.com/uploads/original/469/4693985/2675480-eventhub_ebgames2014-strip.jpg) center center no-repeat;
+}
+
+.body-event--tgs-2014  .promo-strip--event {
+background: black url(http://static2.gamespot.com/uploads/original/469/4693985/2660067-homepage_tgs2014-strip.jpg) center center no-repeat;
+}
+
+/* Fix Positioning of GS plus video modal */
+#promoted-content-video-wrapper { top: 20px; }
+
+/* This is a weird one but it cuts off the 3rd game href */
+.pod--topgames.pod-filter .filter-results { position: static; }
+
+/* GROSS fix for chat ad problem */
+.has-ads .s-chat #wrapper {
+top: 90px;
+}
+
+/* fix for FF not liking width on table-cell */
+.pod-popular .media--small .media-img { width: inherit; }
+
+/* fixes custom html 5 video embeds bleeding outside container */
+[data-embed-type="html"] video { max-width: 100%; }
+
+/* Omnibar fix */
+.mapped-omnibar_top { display: none; }
+.has-omnibar .mapped-omnibar_top { display: block; }
+@media only screen and (min-width: 980px) {
+  .has-omnibar .masthead-search-hold { top: 105px; }
+}
+</style>      
+    <meta name='pageType' data-type='article' data-id='6318725' />
+
+            <script type="text/javascript">
+        //---------------------------------------------------------
+        // Boomtrain glue
+        !function(){function a(a){return function(){var b=Array.prototype.slice.call(arguments);return b.unshift(a),window._bt.push(b),window._bt}}window._bt=window._bt||[];for(var b=["track","identify","initialize","clear","setBsin","person.set"],c=0;c<b.length;c++){var d=window._bt,e=b[c].split("."),f=e[0],g=f;2===e.length&&(d[f]=d[f]||{},d=d[f],f=e[1],g=b[c]),d[f]=a(g)}if(!document.getElementById("analyticstrain-js")){var h=document.createElement("script");h.type="text/javascript",h.id="analyticstrain-js",h.async=!0,h.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.boomtrain.com/analyticstrain-2.min.js";var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(h,i)}}();
+        _bt.initialize("0eddb34d4eb4be1df2b4160ec047aa73");
+        //---------------------------------------------------------
+      </script>
+      
+</head>
+
+
+<body id="default-body" class="default has-nav-slim body-news skin-no col-2-template " >
+  
+    <section id="message-block" class="message-success" style="display: none">
+                </section>
+
+    <div id="site-main">
+
+      
+              <div class="nav-mobile"><a id="js-btn-mobile-nav" class="nav-mobile__item btn-mobile btn-mobile-nav"><i class="icon icon-reorder"></i></a><a href="/" class="logo-site"></a></div><!-- Mast Head --><header id="masthead" role="banner" class="js-show-scroll-dir masthead is-nav-fixed"><div class="container masthead-container masthead-container--flex masthead-container--cushion"><!-- Logo --><h1 id="masthead-logo" class="masthead-logo"><a href=http://www.gamespot.com/ data-click-track-id=coreHeaderFrontDoor  class="logo-site"><span class="logo-site--full"></span>GameSpot
+        </a></h1><span class="eyebrow-promo eyebrow-promo--hub"><a href=http://www.gamespot.com/wow10/ data-click-track-id=promosHeaderpromoRedirect ><img src="http://static1.gamespot.com/uploads/ignore_jpg_scale_tiny/536/5360430/2734736-nav-hub-promo-wow10.png" alt="10 Years of WoW" /></a></span><nav role="navigation" class="masthead-nav masthead-nav--platforms"><ul class="nav-bar"><li class="nav-bar__item"><a href=/pc/ data-click-track-id=eyebrow-platform-pc >PC</a></li><li class="nav-bar__item"><a href=/ps4/ data-click-track-id=eyebrow-platform-ps4 >PS4</a></li><li class="nav-bar__item"><a href=/xbox-one/ data-click-track-id=eyebrow-platform-xbox-one >Xbox One</a></li><li class="nav-bar__item"><a href=/wii-u/ data-click-track-id=eyebrow-platform-wii-u >Wii U</a></li><li class="nav-bar__item nav-bar__item--platforms dropnav js-dropnav"><a>More<i class="icon icon-caret-down"></i></a><i class="icon icon-caret-down js-dropnav-toggle"></i><ul class="dropnav-menu dropnav-menu--small arrow--top  dropnav-menu--has-borderRadius js-dropnav-active"><li class="dropnav-list__item"><a href=/ps3/ data-click-track-id=eyebrow-platform-ps3 >PS3</a></li><li class="dropnav-list__item"><a href=/vita/ data-click-track-id=eyebrow-platform-vita >Vita</a></li><li class="dropnav-list__item"><a href=/xbox-360/ data-click-track-id=eyebrow-platform-xbox-360 >Xbox 360</a></li><li class="dropnav-list__item"><a href=/3ds/ data-click-track-id=eyebrow-platform-3ds >3DS</a></li></ul></li></ul></nav><nav role="navigation" class="masthead-nav masthead-nav--main"><ul class="nav-bar"><li class="nav-bar__item dropnav js-dropnav"><a href=http://www.gamespot.com/new-games/ data-click-track-id=coreHeaderNewGames >Games<i class="icon icon-caret-down"></i></a><i class="icon icon-caret-down js-dropnav-toggle"></i><ul class="dropnav-menu dropdown-menu dropnav-menu--small arrow--top  dropnav-menu--has-borderRadius js-dropnav-active" data-direction="center"><li class="dropnav-list__item"><a href=http://www.gamespot.com/new-games/ data-click-track-id=coreHeaderNewGames1 >New Games</a></li><li class="dropnav-list__item"><a href=http://www.gamespot.com/gamespot-fifty/ data-click-track-id=GameSpot-50 >GameSpot Fifty</a></li></ul></li><li class="nav-bar__item"><a href=http://www.gamespot.com/reviews/ data-click-track-id=coreHeaderReviewsList >Reviews</a></li><li class="nav-bar__item"><a href=http://www.gamespot.com/news/ data-click-track-id=coreHeaderNewsHub >News</a></li><li class="nav-bar__item dropnav js-dropnav"><a href=http://www.gamespot.com/videos/ data-click-track-id=coreHeaderVideosList >Videos<i class="icon icon-caret-down"></i></a><i class="icon icon-caret-down js-dropnav-toggle"></i><hx:include data-always-load="true" src="http://www.gamespot.com/drop-down-videos/"></hx:include></li><li class="nav-bar__item dropnav js-dropnav"><a href=http://www.gamespot.com/forums/ data-click-track-id=coreHeaderForumLatestTopicList >Forums<i class="icon icon-caret-down"></i></a><i class="icon icon-caret-down js-dropnav-toggle"></i><ul class="dropnav-menu dropdown-menu dropnav-menu--medium arrow--top  dropnav-menu--has-borderRadius js-dropnav-active" data-direction="left"><li class="dropnav-list__item"><a href=http://www.gamespot.com/forums/games-discussion-1000000/ data-click-track-id=coreHeaderForumTopicList >Games Discussion</a></li><li class="dropnav-list__item"><a href=http://www.gamespot.com/forums/nintendo-discussion-1000001/ data-click-track-id=coreHeaderForumTopicList1 >Nintendo Discussion</a></li><li class="dropnav-list__item"><a href=http://www.gamespot.com/forums/playstation-discussion-1000002/ data-click-track-id=coreHeaderForumTopicList2 >PlayStation Discussion</a></li><li class="dropnav-list__item"><a href=http://www.gamespot.com/forums/xbox-discussion-1000003/ data-click-track-id=coreHeaderForumTopicList3 >Xbox Discussion</a></li><li class="dropnav-list__item"><a href=http://www.gamespot.com/forums/pc-mac-discussion-1000004/ data-click-track-id=coreHeaderForumTopicList4 >PC &amp; Mac Discussion</a></li><li class="dropnav-list__item"><a href=http://www.gamespot.com/forums/mobile-discussion-1000005/ data-click-track-id=coreHeaderForumTopicList5 >Mobile Discussion</a></li><li class="dropnav-list__item"><a href=http://www.gamespot.com/forums/bug-reporting-feedback-1000006/ data-click-track-id=coreHeaderForumTopicList6 >Bug Reporting &amp; Feedback</a></li><li class="dropnav-list__item"><a href=http://www.gamespot.com/forums/offtopic-discussion-314159273/ data-click-track-id=coreHeaderForumTopicList7 >Off-Topic Discussion</a></li><li class="dropnav-list__item"><a href=http://www.gamespot.com/forums/system-wars-314159282/ data-click-track-id=coreHeaderForumTopicList8 >System Wars</a></li><li class="dropnav-list__item"><a href=http://www.gamespot.com/forums/general-sports-discussion-909188423/ data-click-track-id=coreHeaderForumTopicList9 >General Sports Discussion</a></li></ul></li></ul></nav><ul class="switch skin-switch"><li id="skin-switch" class="switch__item"><a href=# data-click-track-id=eyebrow-skin-white  rel="gamespot_white" data-rel-url="http://static2.gamespot.com/bundles/gamespotsite/css/gamespot_white-e073a17a729cd472766661b301a2eb2c.css" data-richTextEditorTheme="wysiwyg_white"  data-richTextEditorTheme-url="http://static3.gamespot.com/bundles/gamespotsite/css/wysiwyg_white-e073a17a729cd472766661b301a2eb2c.css"  class="skin-switch-btn white switch__btn  tipsy " title="Light Theme">A</a><a href=# data-click-track-id=eyebrow-skin-black   rel="gamespot_black" data-rel-url="http://static4.gamespot.com/bundles/gamespotsite/css/gamespot_black-e073a17a729cd472766661b301a2eb2c.css" data-richTextEditorTheme="wysiwyg_black" data-richTextEditorTheme-url="http://static5.gamespot.com/bundles/gamespotsite/css/wysiwyg_black-e073a17a729cd472766661b301a2eb2c.css" class="skin-switch-btn black switch__btn  tipsy " title="Dark Theme">A</a></li></ul><hx:include  src="/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DGamespotSiteBundle%253ADefault%253AheaderUserInfo&amp;_hash=tytZ63FVD7SGs2FR1TrB3qfn3p4%3D"><ul class="masthead-userBox pull-right hinclude-object"><li class="masthead-userBox__item signup"><i class="icon icon-rocket"></i><a href=https://auth.gamespot.com/login/ data-click-track-id=coreHeader/userinfoLogin  >Sign in</a> / <a href=https://auth.gamespot.com/signup/ data-click-track-id=coreHeader/userinfoSignUp  >Join</a></li></ul></hx:include></div><div class="masthead-search-hold"><div class="container"><div class="span12"><form action="/search/" method="get" class="masthead-search search"><fieldset><i class="icon icon-search"></i><input type="hidden" id="search-indice" name="indices[0]" value="game"/><input type="hidden" id="search-indice" name="indices[1]" value="hub"/><input type="hidden" id="search-indice" name="indices[2]" value="videoshow"/><input type="hidden" id="search-indice" name="indices[3]" value="platform"/><input type="text" id="search-main" name="q" data-click-track-id=coreHeaderSearch-main 
+                                  placeholder="Search GameSpot"
+                              autocomplete="off" class="search-input ready" data-search-index="game" value="" /></fieldset></form></div></div><!-- /container --></div></header>
+
+
+
+      
+            
+    
+    
+        <div id="site-wrapper" >
+            <div id="mantle_skin">
+    <div id="rbSkin">
+      <span id="adSkinLeft"></span>
+      <span id="adSkinRight"></span>
+                    <div id="interstitial-wrap" class="mapped-ad mapped-interstitial mapped-interstitial-dart" ><div id="interstitial" class="ad-wrap ad-wrap-interstitial"><script type="text/javascript">
+        (function (c) {
+          "use strict";
+          var cmd = c.displayAdCmd || [];
+          cmd.push('interstitial');
+          c.displayAdCmd = cmd;
+        })(this);
+      </script></div></div><div id="skin_top-wrap" class="mapped-ad mapped-skin_top mapped-skin_top-dart" ><div id="skin_top" class="ad-wrap ad-wrap-skin_top"><script type="text/javascript">
+        (function (c) {
+          "use strict";
+          var cmd = c.displayAdCmd || [];
+          cmd.push('skin_top');
+          c.displayAdCmd = cmd;
+        })(this);
+      </script></div></div><div id="leader_plus_top-wrap" class="mapped-ad mapped-leader_plus_top mapped-leader_plus_top-dart" ><div id="leader_plus_top" class="ad-wrap ad-wrap-leader_plus_top"><script type="text/javascript">
+        (function (c) {
+          "use strict";
+          var cmd = c.displayAdCmd || [];
+          cmd.push('leader_plus_top');
+          c.displayAdCmd = cmd;
+        })(this);
+      </script></div></div>            <div id="wrapper">
+                                        <div id="site" role="main">
+    <div id="default-content" class=" container row">
+                  <div class="primary-content span8 js-sticky-watch">
+                                    
+        
+    
+    <article itemscope itemtype="http://schema.org/Article" class="content-body news-article article article--news article--two-column">
+
+        
+          <section class="news-hdr">
+          <section class="breadcrumbs"><ul class="breadcrumbs-container"><li><a href="/">GameSpot</a></li><li><a href="/rage-2011/">Rage (2011)</a></li><li><a href="/rage-2011/news/">News & Features</a></li></ul></section>    
+              <h1 class="news-title instapaper_title entry-title" itemprop="name">E3 2011: John Carmack talks Wii U, PlayStation Vita, and next-gen Rage</h1>    
+              <h2 class="news-deck" itemprop="description">Q&amp;A: id Software&#039;s technology chief discusses the possibilities raised by Nintendo&#039;s new console and how a sequel to the postapocalyptic shooter might be &quot;cross-generational.&quot;
+</h2>    
+                      <h3 class="news-byline">
+        by
+                    <a href="/profile/thorsen-ink/" rel="author">Tor Thorsen</a>
+                                on <time datetime="2011-06-09" pubdate="pubdate" itemprop="datePublished">June 9, 2011</time>
+
+        </h3>
+        
+          
+          <ul class="share">
+	
+		<li class="share-item share-item--comments">
+		<a class="js-event-tracking" data-event-tracking="Tracking|news_article|SocialMedia|Comments|Click|1100-6318725" href="http://www.gamespot.com/articles/e3-2011-john-carmack-talks-wii-u-playstation-vita-and-next-gen-rage/1100-6318725/#livefyre" rel="nofollow">
+			<span class="share-item__container"><i class="icon icon-comments-alt"></i></span>
+			<span class="share__count"> <span class="share__text"> Comments</span></span>
+		</a>
+	</li>
+		<li class="share-item share-item--facebook js-share-button-facebook" data-share-url="http://www.gamespot.com/articles/e3-2011-john-carmack-talks-wii-u-playstation-vita-and-next-gen-rage/1100-6318725/">
+		<a class="js-event-tracking" class="js-event-tracking" data-event-tracking="Tracking|news_article|SocialMedia|Facebook|Click|1100-6318725" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.gamespot.com/articles/e3-2011-john-carmack-talks-wii-u-playstation-vita-and-next-gen-rage/1100-6318725/">
+			<span class="share-item__container"><i class="icon icon-facebook"></i></span>
+			<span class="share__count hide"><span class="js-share-count"></span><span class="share__text"> Shares</span></span>
+		</a>
+	</li>
+	<li class="share-item share-item--twitter js-share-button-twitter" data-share-url="http://www.gamespot.com/articles/e3-2011-john-carmack-talks-wii-u-playstation-vita-and-next-gen-rage/1100-6318725/">
+		<a class="js-event-tracking" class="js-event-tracking" data-event-tracking="Tracking|news_article|SocialMedia|Twitter|Click|1100-6318725" target="_blank" href="https://twitter.com/intent/tweet?text=E3 2011: John Carmack talks Wii U, PlayStation Vita, and next-gen Rage&related=&url=http://www.gamespot.com/articles/e3-2011-john-carmack-talks-wii-u-playstation-vita-and-next-gen-rage/1100-6318725/">
+			<span class="share-item__container"><i class="icon icon-twitter"></i></span>
+			<span class="share__count hide"><span class="js-share-count"></span><span class="share__text"> Tweets</span></span>
+		</a>
+	</li>
+	<li class="share-item share-item--google">
+		<a class="js-event-tracking" class="js-event-tracking" data-event-tracking="Tracking|news_article|SocialMedia|Google|Click|1100-6318725" target="_blank" href="https://plus.google.com/share?utm_medium=share%2Bbutton&url=http://www.gamespot.com/articles/e3-2011-john-carmack-talks-wii-u-playstation-vita-and-next-gen-rage/1100-6318725/">
+			<span class="share-item__container"><i class="icon icon-google-plus-sign"></i></span>
+			<span class="share__count">+1</span>
+		</a>
+	</li>
+</ul>
+      </section>
+
+        
+        
+              <section itemprop="articleBody" class="article-body typography-format ">
+                <p style="">  LOS ANGELES--As the <a href="http://e3.gamespot.com/" target="new" rel="nofollow">2011 Electronic Entertainment Expo</a> was winding down, John Carmack was getting ready to leave. Having been flown in for a day on a private jet from Texas--courtesy of his bosses at ZeniMax Media--the chief of id Software's technology department was holding court Wednesday at the extravagant booth of its corporate sibling, Bethesda Softworks.   </p><p style="">  <figure data-ref-id="1300-2249440" data-align="right" data-embed-type="image" data-size="medium" data-resize-src="http://static.gamespot.com/uploads/original/mig/9/4/4/0/2249440-carmack_crop404_screen.jpg" data-resize-url="" data-resized="" data-ratio="0.7603550295858" data-width="338" style="width: 338px"><a class="fluid-height" style="padding-bottom:76.0%" href="" data-ref-id="1300-2249440"><img src="http://static.gamespot.com/uploads/scale_medium/mig/9/4/4/0/2249440-carmack_crop404_screen.jpg"></a><figcaption>John Carmack is already thinking about the next generation of consoles.</figcaption></figure>  </p><p style="">  Bethesda is publishing <a href="/articles/e3-2011-rage-exclusive-hands-on-preview-how-it-all-works-the-authority-and-e3/1100-6316277/" data-ref-id="1100-6316277">Rage</a>, the next game from id. The postapocalyptic action title--which features both on-foot shooting and car combat--has been in the works for the better part of a decade. It's also built on an all-new engine, id Tech 5, that Carmack created specifically for the game.   </p><p style="">  Rage ships for the PC, Xbox 360, and PlayStation 3 on September 13--the first simultaneous console and PC launch in id's history. GameSpot caught up with Carmack at E3 to talk about the challenges of multiplatform development, the future of the Rage franchise, and his thoughts on the two platforms announced at the show--the <a href="http://gamespot.com/6317471/" target="new">Wii U</a> and <a href="http://gamespot.com/6317151/" target="new">PlayStation Vita</a>.  <div id="incontent_top-wrap" class="mapped-ad mapped-incontent_top mapped-incontent_top-dart"><div id="incontent_top" class="ad-wrap ad-wrap-incontent_top"></div></div></p><p style="">  <b>GameSpot:</b> <a href="/articles/rage-dropping-sept-13-2011/1100-6273441/" data-ref-id="1100-6273441">id announced the launch date for Rage over a year before it was even done</a>. Normally you're used to "When it's done" being your deadline. Is it strange developing not only with a hard deadline, but one that is so far out?   </p><p style="">  <b>John Carmack:</b> Well, the game development has taken too long, and we have to take steps to make sure it doesn't happen again because you can't be open ended about that. You can't just have a game take 10 years to develop. When you're paying so many people, eventually reality does have to intrude. But I mean, we were frustrated internally that we weren't able to push things together as quickly as we wanted to. So having the deadline was useful for us. We had to have some focus to it.   </p><p style="">  But it's done now. We still have several weeks of polish before the final touches are on there. I mean, we're collecting good notes from just watching hundreds of people go through and put hands on the game here [at E3] right now. But it's a different thing from like in the old days when something takes 18 months and you want to take six months more for it, then you know, something's taken four years and you want to take two years more for it.  </p><p style="">  <b>GS:</b> Is that because of the scale of the way development is now? That so many people are involved?  </p><p style="">  <b>JC:</b> It's also I think about the fact that when we started Rage, the iPhone didn't exist. Things change so much over such a period.  </p><p style="">  <b>GS:</b> When was it exactly?  </p><p style="">  <b>JC:</b> It was over six years ago…seven years, practically. So it's been a really long time and you just should not take that long on any product. We need to make sure that we don't wind up taking that long again. We're not going to tear up that much of the code base probably ever again. Of course, it used to be that we could afford to say, "All right, every new generation, we're going to rewrite everything from scratch." That's not tenable anymore, and it's not necessary either because a lot of our stuff really serves pretty well.   </p><p style="">  Even if I do write a brand new render or something for the next generation, there's no reason why we can't continue to use much of our animation and decoration systems, voice tracking, and all this other stuff. But we did an awful lot with Rage; it was completely unprecedented technology. We had to spend years for me to gather the whole mega-texture content creation pipeline, and the ways that we would build things and the different strategies with the artists and designers would use to take advantage of this. For just about the last year, a lot of it is just doing the final work to make sure it actually runs like it's supposed to on all the consoles.  </p><p style="">  <b>GS:</b> Was that a big challenge? Doing multiplatform development?  </p><p style="">  <b>JC:</b> Well, we built it from the beginning, so everything was working [on all platforms]. But it was easy for the designers to kind of slide into just working on the PC, and that left us to cram things at the end, you know. Programmers found the memory that they could and then designers go back and cut some of the things out or put some of the things up on there.   </p><p style="">  We know that wasn't our best. We didn't do the best possible job on that. We're trying to make sure that with the Doom [4] project…that we get it running on the consoles early and it stays running on there.   </p><p style="">  <b>GS:</b> Do you find yourself pushing up against the limits of the consoles' technology? I mean, right now, we're six years into the Xbox 360's life cycle…  </p><p style="">  <b>JC:</b> The interesting thing is, I don't feel at all that the consoles are tapped out right now. It's different than back in the old days when you're looking at Super Nintendo or something where many programmers would know every single register in a device like that and they really have at least thought about just about every possible way you might choose to exploit a platform like that. But the current platforms are so powerful and so sophisticated. I don't think there's any person anywhere that can really honestly say they know everything about one of these platforms. I'll randomly page through documentation on the 360, reading articles that I haven't read before realizing that, "Oh, there probably are smarter ways to use that vector processor."  </p><p style="">  So, that is a different situation than previous generations where there's still a lot that can be exploited in there. I mean, we did know up front, "Here's the memory we have, here's the amount of processing cycles we have." [But] there're still plenty of alternate directions that we could wind up looking at. It is interesting that on the PC side, we have systems that are 10 times more powerful than the consoles. But it's frustrating in that a lot of the PC systems that are many times more powerful still have trouble holding the same 60 frames-per-second rate because of API overhead, API clocking issues, and things like that. We're working with Intel and Nvidia on all these issues, but it is kind of frustrating when I know that the hardware is vastly more powerful but because we don't have quite as tight control over it, a lot of power goes to waste.  </p><p style="">  <figure data-ref-id="1300-2290231" data-align="right" data-embed-type="image" data-size="medium" data-resize-src="http://static.gamespot.com/uploads/original/mig/0/2/3/1/2290231-rage_guns_guns_09025_screen.jpg" data-resize-url="" data-resized="" data-ratio="0.625" data-width="640" style="width: 640px"><a class="fluid-height" style="padding-bottom:62.5%" href="" data-ref-id="1300-2290231"><img src="http://static.gamespot.com/uploads/scale_medium/mig/0/2/3/1/2290231-rage_guns_guns_09025_screen.jpg"></a><figcaption>Rage 2 could appear on the PlayStation 4, as well as the PS3.</figcaption></figure>  </p><p style="">  <b>GS:</b> So are you already thinking about Rage 2?  </p><p style="">  <b>JC:</b>  The exciting thing about that is that we set out with Rage to do something that was different than our previous games. We really didn't want it to be Doom 3 plus one. So we have the combat stuff, we have the driving stuff, we have the economy, and the items and the engineering work, and all these other things. But you know, when we come to look back at the beginning, at the original decisions, there's a couple of things that we think proved to not be as valuable as we would have hoped for the game.   </p><p style="">  But then there're some things that don't detract a bit from the normal fun that we're used to producing on there, and they add a lot to it. And they're things that we're pretty excited about devoting more resources, more programming resources, more media budget, more time developing to it…to make some of those things just a lot cooler in a lot of ways.   </p><p style="">  So, yeah, the team morale is really good right now, as we get to the final end of this. We feel good about the product that we've got out here. We think it's going to be well received, and it should review well. We're going to have a ton of fun with the game. And we know we've all got our personal list of the things that, if we get to go back and revisit these decisions, we're going to do to make it that much better in the future.   </p><p style="">  <b>GS:</b> So that's a "yes"?  </p><p style="">  <b>JC:</b> Yes. I mean, I guess we don't have a formal, official announcement, but, yeah, it's certainly heading that way.  </p><p style="">  <b>GS:</b> That's great. And in terms of Doom 4, what's the status of that?  </p><p style="">  <b>JC:</b> I know we're not supposed to talk about it, but I'll tell you a couple of things. (Looks at media minder across the table.) So, as soon as Rage ships, the core tech team moves over to start making things happen on the Doom 4 project. There's me and the systems programmer types that have been on Rage for so long. We're going to move over to the Doom team and a lot of resources are going to migrate over there. And that's a necessary and key aspect of being a larger company; it gives us this ability to migrate people between the projects because it was something that we were really feeling the pinch before this. If you've got 50 people working on a project, it's not useful to have all of them on day one on there; you really want to have a smaller team building things. Then at the end now, we would have a hundred people on the team.   </p><p style="">  That's the model that we're moving toward…being able to migrate parts of the company between projects on there kind of makes for a better schedule. And the only thing I've really talked about on Doom 4, technology-wise, is that we did make the decision that…well, my biggest pride and joy about Rage is that I won the fight for 60 frames per second on there, but it involves significant trade-offs. You can't have 30 guys crawling all over you at 60 frames per second at this graphics technology level because it's painful. It's a lot of effort to do that. But, we did make the call that for Doom 4, the single-player is going to go 30 frames per second on the consoles. So we can have 30 demons crawling all over you on there. But the multiplayer is still going to be 60 frames per second, so it has the quality feel that Rage has.  </p><p style="">  <b>GS:</b> A quick follow up on Rage 2. Given that it's coming out after Doom 4, is that so far out it's going to be for next-generation consoles?  </p><p style="">  <b>JC:</b> We don't have any kind of release date on any of that. The expectation would be that it's not a brand new engine for Rage 2, since you want people to be able to concentrate on the design. There's a lot of value that we can add relatively quickly based on our experience with getting this product out the door.   </p><p style="">  I am, obviously, looking at the next-generation consoles and what we're going to be doing on there, [and] which titles wind up being crossovers. But it's clear that when I'm talking about next-gen consoles, there's no way somebody that's not basically an appendage of a first party will do something that's solely for next-gen consoles because so much of the expense is developing the media to target these things. It's obvious what you do if you got a title on this current generation; the next one you go ahead and you run a 1080p instead of 720i. If you're a 30 hertz game, you try to push up to 60. Actually, most games will run out of power on the new consoles even before they've added all those things onto that.   </p><p style="">  But I am working on next-generation engine technology…about what we'll do differently in graphics when we start really thinking about it. It's likely that the project after Doom 4, the next major one, will be designed to be cross-generational. So we want to have a media strategy session…that we can have something that ships in the quality of Rage on current platforms but actually takes advantage of the next-generation platforms.  </p><p style="">  <b>GS:</b> Have you had any chance to look at the Wii U at all?  </p><p style="">  <b>JC:</b>  They made a big presentation to the ZeniMax companies and I said, "Do I want to fly up there?" This was just last month or something. But I said, "No, I really need to stay here and just work on Rage right now." But you know the technology level on there brings it up to parity with the other consoles, which is nice for us. Previously, the Wii was not a target. Id Tech 5 was just not suitable for the Wii at all. We seriously talked about possibly using the iOS Rage technology that I built for that for a Wii game. It would fit perfectly from a technology standpoint, and I think would have been really pretty cool as a Wii game, but we decided that it wasn't the right time to jump into the Wii market.   </p><p style="">  But now that we're looking at another platform that is eminently suitable for the technology, I'm sure we're going to try and bring it up on there. But it will become a market question of do we think that there will be people there that won't be served by one of the other SKUs? If you're going to have a serious hardcore game on there, the Wii is usually the hardcore gamer's second or third console. Even if we could have shipped Rage in full glory on the Wii, it probably wouldn't have made a whole lot of sense because people that want Rage probably also have a PC, 360, or PS3 that could do the game better justice.   </p><p style="">  So we'll be seeing how the market plays out on there. I'm kind of excited about the touch-screen aspect on there. I think that probably has broader general utility for games than most of the motion control stuff, where you really have to design a game around motion control and you can't just tack it onto a finely crafted FPS. But I think the DS has really shown what the extra little touch screen can do--almost any game can do something useful with that.  </p><p style="">  <figure data-ref-id="1300-2274750" data-align="right" data-embed-type="image" data-size="medium" data-resize-src="http://static.gamespot.com/uploads/original/mig/4/7/5/0/2274750-wiiu_controller_002_06509_screen.jpg" data-resize-url="" data-resized="" data-ratio="0.75" data-width="1024" style="width: 1024px"><a class="fluid-height" style="padding-bottom:75.0%" href="" data-ref-id="1300-2274750"><img class="js-lazy-load-image" data-src="http://static.gamespot.com/uploads/scale_medium/mig/4/7/5/0/2274750-wiiu_controller_002_06509_screen.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img src="http://static.gamespot.com/uploads/scale_medium/mig/4/7/5/0/2274750-wiiu_controller_002_06509_screen.jpg"></noscript></a><figcaption>Carmack is excited about the Wii U.</figcaption></figure>  </p><p style="">  <b>GS:</b> Speaking of touch screens, did you get a chance to look at the PlayStation Vita at all?  </p><p style="">  <b>JC:</b> No, but I think that Sony learned a lot from the PS3, and they've gone out of their way to make sure that the development is as easy as possible on there. However, I wouldn't want to be the executive making the decision to launch a new portable gaming machine in the post-smartphone world. I think that they've picked as eminently a suitable hardware spec as they could for that. They're going to have you program for it like a console, so it's going to seem twice as powerful as a smartphone with the exact same chips in there.   </p><p style="">  But of course, by the time they actually ship, there may be smartphones or these tablets with twice as much power as what they're shipping with on there. And a year or two after that, it's going to look pretty pokey. The key to their success, if there's going to be a success there, is allowing people to more or less directly move over the console development engine to technologies on there. Because you know, you don't have people making $50 million budget iOS games. You make a game that's fun and quick to do, and you grab low-hanging fruit with the technology there.  So, even if that plays out, such that people find that they can easily bring over their full-on, full-blown AAA console titles and put it on [the Vita], that's going to give it a reason for existence.  </p><p style="">  <b>GS:</b> But right now, id's mobile efforts are going to be focused on iOS.  </p><p style="">  <b>JC:</b> It does come down to just our total manpower on there. I made the decision finally, that OK, we should start doing Android stuff, but then we hired a guy to work on Android and wound up putting him on iOS stuff. I think we can make pretty good money on any of these things, but our iOS stuff, to a large degree, is ZeniMax humoring me because the ZeniMax strategy is to look for the home runs. They want the AAA titles that are going to go out in many, many millions of units. And I'm like, "Hey, we made a half a million dollars here, a half a million dollars there, it pays everybody's salaries," and it's a little bit of a technology for me to prototype new directions. And it's fun!   </p><p style="">  But you know, I don't think that there's a lot of big feeling that it's going to be a major business arm. But I think as long as it's profitable…and I think it's a useful release on a lot of levels, and I'm still excited by the prospects. I mean, one of the things that I fret a little bit about is that we see more and more people that are just happy playing these games on here, especially amongst the middle-aged developer crowd. I can't go sit in front of my Xbox all weekend, but I can play a little bit here and there.  </p><p style="">  But, the data certainly isn't showing AAA doing well on iOS. And the counter-argument that some people make that I find interesting is it's great to have 50 million people playing Angry Birds or whatever because it's easier to sell a AAA title to somebody that's had fun in some gaming experience than somebody that never even thinks about games.  </p><p style="">  <b>GS:</b> When <a href="/articles/bethesda-parent-acquires-id-software/1100-6212479/" data-ref-id="1100-6212479">id was bought by ZeniMax in 2009</a>, you basically said that it felt like id was becoming its own publisher. Now that you're about to ship Rage, do you guys still feel that way?  </p><p style="">  <b>JC:</b> It's been better than I could have expected. On a personal level, I don't have to pretend to be an executive anymore. I don't have to go to board of directors meetings or talk about board strategy things. So, I've actually gotten to program more in the last year and a half than I did the year and a half before that.   </p><p style="">  So, it's been personally good there. And one of the things that was really unexpectedly pleasant is being part of a larger family. In December, we have this big get-together where everybody shows the games in the theaters and talks about everything. And there was this sort of unexpectedly pleasant sense that this is really nice to be part of a larger family and to be able to cheer for somebody else's effort. It's awesome being a sister to [The Elder Scrolls V] Skyrim on there. So, I don't have a negative thing at all to say about how it's gone. I couldn't be happier.  </p>
+        
+        
+        
+  
+  
+                                    <dl class="news-related">
+            <dt><i class="icon icon-tags"></i>  Filed under:</dt>
+                                          <dd>
+                                      <a href="/rage-2011/">
+                                    Rage (2011)
+                                      </a>
+                                  </dd>
+                                                        <dd>
+                                      <a href="/playstation-vita/">
+                                    PlayStation Vita
+                                      </a>
+                                  </dd>
+                                                        <dd>
+                                      <a href="/wii-u/">
+                                    Wii U
+                                      </a>
+                                  </dd>
+                                    </dl>
+                  
+        
+      </section>
+    
+        
+  <div class="row">
+              <div class="span6">
+        <div class="article-slug article-slug--author">
+          <h4 class="article-slug__heading">Written By</h4>
+          <div class="article-slug__card">
+            <div class="authorCard authorCard--article">
+
+  <div class="align-vertical--contain">
+                  <div class="align-vertical--child authorCard-avatar  hide-mobile">
+          <div class="avatar avatar--circle ">
+                          <a href="/profile/thorsen-ink/" class="img">
+                <img src="http://static1.gamespot.com/uploads/square_avatar/1440/14409144/2205910-avatar-default.png" alt="thorsen-ink">
+              </a>
+                      </div>
+        </div>
+                  <div class="align-vertical--child ">
+      <h4 class="authorCard-name"><a href="/profile/thorsen-ink/" rel="author" itemprop="author"><strong>Tor Thorsen</strong></a></h4>
+                    <div class="authorCard-deck">
+                                
+                  </div>
+      
+                          <div class="authorCard-social">
+                                      </div>
+          </div>
+
+          </div>
+</div>
+          </div>
+        </div>
+      </div>
+                      <div class="span6">
+          <div class="article-slug article-slug--object">
+            <h4 class="article-slug__heading ellipsis">Want the latest news about Rage (2011)?</h4>
+            <div class="article-slug__card">
+              <div class="media align-vertical--contain">
+                <figure class="media-figure align-vertical--child">
+                  <a href="/rage-2011/">
+                  <div class="media-img avatar">
+                    <img src="http://static2.gamespot.com/uploads/square_avatar/box/6/8/9/8/30930-86898.jpg" alt="Rage (2011)">
+                  </div>
+                  </a>
+                </figure>
+                <div class="media-body align-vertical--child">
+                  <h3 class="media-title"><a href="/rage-2011/">Rage (2011)</a></h3>
+                  <div class="media-byline">         First Released <span itemprop="datePublished">Oct 3, 2011</span>
+   </div>
+                                                      
+  
+<div class="stacks game-card-loading  stacks--medium"
+     data-post-render-param='GameBundle.gameIds[]'
+     data-post-render-value="30930">
+
+
+
+    
+        
+      <div class="js-pop-over-parent">
+                <div class="stacks-signUp js-game-follow js-pop-over-container stacks-popup js-game-follow-unreg"
+             data-popover-game-id=30930
+             data-popover-container-name="2045272633"
+             data-click-open-offset-X="0" data-click-open-offset-Y="0">
+
+          <form class="js-game-card-follow-form" action="/api/follow/followGame/30930" method="post">
+            <div class="l-item--pull stacks-signUp__image">
+              <div class="media-img media-img--boxart">
+                <img src='%gameImage%' alt='%gameName%'>
+              </div>
+            </div>
+            <div class="stacks-signUp__title">Can't Get Enough %gameName%?</div>
+            <p class="stacks-signUp__deck">No spam, no fuss; just the latest updates delivered right to you.</p>
+            <input type="email" name="email" placeholder="Enter Your Email Address..." required class="stacks-signUp__input" />
+            <input type="submit" value="Sign Up" class="btn btn-success stacks-signUp__submit" />
+            <div class="error"></div>
+          </form>
+
+          <div class="hidden js-game-card-follow-others stacks-signUp__success">
+            <strong class="stacks-signUp__title">You're Good to Go!</strong>
+            <p class="stacks-signUp__deck">We'll begin emailing you updates about %gameName%.</p>
+
+                
+          </div>
+        </div>
+
+        <div class="stacks-action">
+
+                    <span class="stacks-action__container js-pop-over-toggle" data-pop-over="2045272633">
+            <i class="icon icon-plus"></i>
+            <span>Follow</span>
+          </span>
+
+        </div>
+      </div>
+
+      </div>
+
+                </div>
+            </div>
+          </div>
+        </div>
+            </div>
+
+
+    </article>
+
+        
+
+  
+
+<div class="YAD YAD--module"></div>
+<script>
+ (function(a,b,c,d,e,f){a[d]||(a[d]=
+ function(){(a[d].q=a[d].q||[]).push([arguments,+new Date])});
+ e=b.createElement(c);f=b.getElementsByTagName(c)[0];
+ e.src='https://s.yimg.com/uq/syndication/yad.js';e.async=true;
+ f.parentNode.insertBefore(e,f)}(window,document,'script','yad'));
+ yad('dd8948fa-75df-30d8-a1b9-8ade0e28daac');
+</script>
+
+<div class="YAD YAD--beacon"></div>
+<script>
+  (function()
+  {
+    var pageType = document.getElementsByName('pageType');
+    if(!pageType.length){
+      return;
+    }
+
+    pageType = pageType[0].getAttribute('data-type');
+
+    if(pageType == 'article' || pageType == 'review' || pageType == 'video'){
+
+      (function(a,b,c,d,e,f){a[d]||(a[d]=
+      function(){(a[d].q=a[d].q||[]).push([arguments,+new Date])});
+      e=b.createElement(c);f=b.getElementsByTagName(c)[0];
+      e.src='https://s.yimg.com/uq/syndication/yad.js';e.async=true;
+      f.parentNode.insertBefore(e,f)}(window,document,'script','yad'));
+      yad('045e47d1-1e51-3375-b487-13f8602f933b');
+    }
+  }());
+</script>
+
+    
+<div id="livefyre" class="pod pod-comments pod-comments--livefyre comments-block clear hide" data-guid="1100-6318725" >
+  
+<dl class="pod-header  " ><dt class="pod-header__item"><div class="pod-title"><h4>Discussion</h4><span class="pod-div"></span></div></dt></dl>      <!-- FlyLivefyreBundle:Livefyre:conversationBootstrap:1100-6318725|N|13:42:35 --><div id="livefyreConversation" data-component="livefyreConversation" data-livefyre-conversation-options='{"globalConfig":{"network":"gamespot.fyre.co"},"commentStreamConfigs":{"siteId":"297020","articleId":"1101:6318725","el":"livefyreConversation","checksum":"ffb4cdde0ea9ee1756a9de9b2ce5fb39","collectionMeta":"eyJ0eXAiOiJqd3QiLCJhbGciOiJIUzI1NiJ9.eyJ0aXRsZSI6IkUzIDIwMTE6IEpvaG4gQ2FybWFjayB0YWxrcyBXaWkgVSwgUGxheVN0YXRpb24gVml0YSwgYW5kIG5leHQtZ2VuIFJhZ2UiLCJ1cmwiOiJodHRwOlwvXC93d3cuZ2FtZXNwb3QuY29tXC9hcnRpY2xlc1wvZTMtMjAxMS1qb2huLWNhcm1hY2stdGFsa3Mtd2lpLXUtcGxheXN0YXRpb24tdml0YS1hbmQtbmV4dC1nZW4tcmFnZVwvMTEwMC02MzE4NzI1XC8iLCJjaGVja3N1bSI6ImZmYjRjZGRlMGVhOWVlMTc1NmE5ZGU5YjJjZTVmYjM5IiwiYXJ0aWNsZUlkIjoiMTEwMTo2MzE4NzI1In0.JlK3MU7HQ4vhalVfn__JHwRPVRDXNAKktjQ-BS_HGoU"}}'>
+<div class="fyre fyre-width-large fyre-bootstrap">
+  <div class="fyre-widget">
+    <div class="fyre-stream-stats">
+      <div class="fyre-comment-count">
+        <span>94 comments</span>
+      </div>
+
+      <div class="fyre-divider"></div>
+
+      <div class="fyre-help">
+        <div class="fyre-box-wrapper">
+          <a href="http://livefyre.com" target="_blank"><span class="fyre-logo-drop">&nbsp</span>
+          <img class="fyre-logo-help" src="https://d3qdfnco3bamip.cloudfront.net/wjs/v3.0/images/lf-logo.png" alt="Livefyre" /></a>
+          
+          <ul class="fyre-box-list">
+            <li><a href="http://livefyre.com" target="_blank" title="Get Livefyre">Get
+            Livefyre</a></li>
+
+            <li><a href="http://support.livefyre.com" target="_blank" title=
+            "FAQ">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="fyre-auth">
+      <div class="fyre-login-bar"><a rel="nofollow" href="#" class="fyre-user-loggedout">Sign in</a></div>
+    </div>
+
+    <div class="fyre-editor">
+      <div class="fyre-editor-container">
+        <div class="fyre-editor-editable" style="height: 100px;"></div>
+
+        <div class="fyre-editor-toolbar">
+          <div class="goog-toolbar goog-toolbar-horizontal" style=
+          "-webkit-user-select: none;" role="toolbar" aria-activedescendant="">
+            <div class="goog-inline-block fyre-button-left fyre-format-button" title=""
+            role="button" style="-webkit-user-select: none;" id=":0">
+              <div class="goog-inline-block fyre-button-left-outer-box" style=
+              "-webkit-user-select: none;">
+                <div class="goog-inline-block fyre-button-left-inner-box" style=
+                "-webkit-user-select: none;"></div>
+              </div>
+            </div>
+
+            <div class="goog-inline-block fyre-button-left fyre-mention-button" title=""
+            role="button" style="-webkit-user-select: none;" id=":1">
+              <div class="goog-inline-block fyre-button-left-outer-box" style=
+              "-webkit-user-select: none;">
+                <div class="goog-inline-block fyre-button-left-inner-box" style=
+                "-webkit-user-select: none;"></div>
+              </div>
+            </div>
+
+            <div class="goog-inline-block fyre-button-left fyre-follow-button" title=""
+            role="button" style="-webkit-user-select: none;" id=":2">
+              <div class="goog-inline-block fyre-button-left-outer-box" style=
+              "-webkit-user-select: none;">
+                <div class="goog-inline-block fyre-button-left-inner-box" style=
+                "-webkit-user-select: none;">
+                  + Follow
+                </div>
+              </div>
+            </div>
+
+            <div class=
+            "goog-inline-block fyre-button-right fyre-post-button fyre-post-button-enabled"
+            title="" role="button" style="-webkit-user-select: none;" id=":3">
+              <div class="goog-inline-block fyre-button-right-outer-box" style=
+              "-webkit-user-select: none;">
+                <div class="goog-inline-block fyre-button-right-inner-box" style=
+                "-webkit-user-select: none;">
+                  Post comment
+                </div>
+              </div>
+            </div>
+
+            <div class=
+            "goog-inline-block fyre-button-right fyre-post-to fyre-post-to-facebook"
+            title="" role="button" style="-webkit-user-select: none;" id=":4">
+              <div class="goog-inline-block fyre-button-right-outer-box" style=
+              "-webkit-user-select: none;">
+                <div class="goog-inline-block fyre-button-right-inner-box" style=
+                "-webkit-user-select: none;"></div>
+              </div>
+            </div>
+
+            <div class=
+            "goog-inline-block fyre-button-right fyre-post-to fyre-post-to-twitter"
+            title="" role="button" style="-webkit-user-select: none;" id=":5">
+              <div class="goog-inline-block fyre-button-right-outer-box" style=
+              "-webkit-user-select: none;">
+                <div class="goog-inline-block fyre-button-right-inner-box" style=
+                "-webkit-user-select: none;"></div>
+              </div>
+            </div>
+
+            <div class=
+            "goog-inline-block fyre-button-right fyre-post-to fyre-post-to-linkedin"
+            title="" role="button" style="-webkit-user-select: none;" id=":7">
+              <div class="goog-inline-block fyre-button-right-outer-box" style=
+              "-webkit-user-select: none;">
+                <div class="goog-inline-block fyre-button-right-inner-box" style=
+                "-webkit-user-select: none;"></div>
+              </div>
+            </div>
+
+            <div class="goog-toolbar-separator goog-inline-block" style=
+            "-webkit-user-select: none;" role="separator" id=":6">
+              &nbsp;
+            </div>
+          </div>
+
+          <div class="fyre-format-toolbar" style="display: none;">
+            <div class="goog-toolbar goog-toolbar-horizontal" style=
+            "-webkit-user-select: none;" role="toolbar" tabindex="-1">
+              <div class="goog-inline-block goog-toolbar-button" title="Bold"
+              aria-pressed="true" role="button" style="-webkit-user-select: none;" id=
+              "+bold">
+                <div class="goog-inline-block goog-toolbar-button-outer-box" style=
+                "-webkit-user-select: none;">
+                  <div class="goog-inline-block goog-toolbar-button-inner-box" style=
+                  "-webkit-user-select: none;">
+                    <div class="tr-icon tr-bold" style="-webkit-user-select: none;">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="goog-inline-block goog-toolbar-button" title="Italic"
+              aria-pressed="true" role="button" style="-webkit-user-select: none;" id=
+              "+italic">
+                <div class="goog-inline-block goog-toolbar-button-outer-box" style=
+                "-webkit-user-select: none;">
+                  <div class="goog-inline-block goog-toolbar-button-inner-box" style=
+                  "-webkit-user-select: none;">
+                    <div class="tr-icon tr-italic" style="-webkit-user-select: none;">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="goog-inline-block goog-toolbar-button" title="Underline"
+              aria-pressed="true" role="button" style="-webkit-user-select: none;" id=
+              "+underline">
+                <div class="goog-inline-block goog-toolbar-button-outer-box" style=
+                "-webkit-user-select: none;">
+                  <div class="goog-inline-block goog-toolbar-button-inner-box" style=
+                  "-webkit-user-select: none;">
+                    <div class="tr-icon tr-underline" style="-webkit-user-select: none;">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="goog-inline-block goog-toolbar-button" title=
+              "Add or remove link" aria-pressed="true" role="button" style=
+              "-webkit-user-select: none;" id="+link">
+                <div class="goog-inline-block goog-toolbar-button-outer-box" style=
+                "-webkit-user-select: none;">
+                  <div class="goog-inline-block goog-toolbar-button-inner-box" style=
+                  "-webkit-user-select: none;">
+                    <div class="tr-link" style="-webkit-user-select: none;">
+                      Link
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="goog-inline-block goog-toolbar-button" title="Numbered list"
+              aria-pressed="true" role="button" style="-webkit-user-select: none;" id=
+              "+insertOrderedList">
+                <div class="goog-inline-block goog-toolbar-button-outer-box" style=
+                "-webkit-user-select: none;">
+                  <div class="goog-inline-block goog-toolbar-button-inner-box" style=
+                  "-webkit-user-select: none;">
+                    <div class="tr-icon tr-insertOrderedList" style=
+                    "-webkit-user-select: none;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="goog-inline-block goog-toolbar-button" title="Bullet list"
+              aria-pressed="true" role="button" style="-webkit-user-select: none;" id=
+              "+insertUnorderedList">
+                <div class="goog-inline-block goog-toolbar-button-outer-box" style=
+                "-webkit-user-select: none;">
+                  <div class="goog-inline-block goog-toolbar-button-inner-box" style=
+                  "-webkit-user-select: none;">
+                    <div class="tr-icon tr-insertUnorderedList" style=
+                    "-webkit-user-select: none;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fyre-comment-stream" style="">
+      <div class="fyre-stream-sort">
+        <a class="fyre-stream-sort-newest">Newest</a> | <a class="fyre-stream-sort-oldest">Oldest</a>
+      </div>
+
+      <div class="fyre-stream-content">      
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/7203480587a85d32244173f9764a5c21/50.jpg" class=
+    "fyre-user-avatar" alt="Boochie" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">Boochie</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>LOL ..... yeah you young whipper snappers can make snide comments about Carmack's appearance... but he's always looked that way and is awesome. LOL I remember when I was a teen back around 2000 playing DooM and I was into it so much even making levels and I could never tell how old Carmack was in pictures--- he always looked like that mystical old/young nerdy developer guy with the thick glasses and late 80's haircut lol. Keep the good games coming J.C. --- I do wish some of the original people like Adrian Carmack had never left/been kicked out of id. Whether people realize it or not, the H.P. Lovecraft art style he brought to DooM is what made it so amazing to me. I feel like id doesn't quite have that same level of nether-realm/horror that it once did in it's games but oh well.... I'm still going to play pretty much anything they make =)</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/8d9db7f195ca11a1d1f2d43e49422e76/50.jpg" class=
+    "fyre-user-avatar" alt="ChamomileBaths" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">ChamomileBaths</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>@hush404 and @XaK2
+If you think the gaming abilities on smartphones are good now, wait a year or two. Because of the increased adoption rate and justifiable purchase price of $200 every other year on phones I don't see how handheld gaming systems stand a chance. Xperia Play is just the start. Heck, I have an analog stick that attaches to my iPhone screen that works awesome on sports games...<a href="http://techcrunch.com/2011/06/16/joystick-it-because-your-iphone-needs-a-gigantic-oldschool-joystick-right/" target="_blank" rel="nofollow">http://techcrunch.com/2011/06/16/joystick-it-because-your-iphone-needs-a-gigantic-oldschool-joystick-right/</a></p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/5bcc61f755bc5ab4506805c4d690028b/50.jpg" class=
+    "fyre-user-avatar" alt="hush404" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">hush404</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>@XaK2 - I'm fine with that. Xperia Play does look to have a leg up over other android phones... just not a device like the Vita.</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/5a554bf985d08dc2beef4c358e5b3316/50.jpg?v=1386910985" class=
+    "fyre-user-avatar" alt="XaK2" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">XaK2</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>@hush404 the xperia play can do more than play android games. Im not saying its equal to a psp, vita, ds or any other gaming specific handheld, but i defiantly think its cool.
+
+<a href="http://www.youtube.com/watch?v=89jGdRX852I" target="_blank" rel="nofollow">http://www.youtube.com/watch?v=89jGdRX852I</a>
+
+N64 EMULATION!!</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://gravatar.com/avatar/e704b8479c5c5cc3a7f6a5d2b1e6bbb0/?s=50&amp;d=http%3A//livefyre-avatar.s3.amazonaws.com/a/anon/50.jpg" class=
+    "fyre-user-avatar" alt="nitrouside" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">nitrouside</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>@stonehengehill
+
+LMFAO</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/dd4d947ba112ed8edbdbf925ffbedf93/50.jpg" class=
+    "fyre-user-avatar" alt="grbolivar" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">grbolivar</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>JC: "The key to their success, if there's going to be a success there, is allowing people to more or less directly move over the console development engine to technologies on there"
+
+STFU Carmack, everybody knows you are a Apple fanboy so go with your stupid Rage somewhere else and leave Vita to real games.</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/f617d8695922b149a469e12a4cb76cb4/50.jpg" class=
+    "fyre-user-avatar" alt="stonhengehill" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">stonhengehill</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>is that Janet Reno</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/2b295f86fd4717546b71c84ec1e7f34e/50.jpg" class=
+    "fyre-user-avatar" alt="Deingerous" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">Deingerous</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>Well 50% more powerful is kinda underwhelming i think, im sure Sony and Microsoft will be at least 2x their current models, but hey, as always, video games is not all about tech its about the creativity, nintendo has never really faltered with that. Still its possibly gonna be embarassing for them if Xbox(next) and PS4 is 2x-5x more powerful than the wii u...</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/e785dacbacd3ffb731340d72061b750b/50.jpg" class=
+    "fyre-user-avatar" alt="excelx213" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">excelx213</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>a much younger Janet Reno lol</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/e785dacbacd3ffb731340d72061b750b/50.jpg" class=
+    "fyre-user-avatar" alt="excelx213" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">excelx213</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>[This message was deleted at the request of the original poster]</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/fc502bf3bb7a7545c2896162ddebf3b9/50.jpg" class=
+    "fyre-user-avatar" alt="DarthTall" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">DarthTall</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>Why is there a picture of Janet Reno in this article?</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/18de13d4ce929f4abded50079fb2798d/50.jpg" class=
+    "fyre-user-avatar" alt="Zephol" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">Zephol</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>doom 4!!</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/a16935bba9ec168d299e2581222850d3/50.jpg" class=
+    "fyre-user-avatar" alt="fr3dle" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">fr3dle</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>" So having the deadline was useful for us. We had to have some focus to it."
+
+This is not something the young Carmack would have said!</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/56dd8da410285dd7f3a773b1a7beecc6/50.jpg" class=
+    "fyre-user-avatar" alt="zync-" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">zync-</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>7 years for rage Mnnnn</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/5208434468c5696a934bdba91c2ceec1/50.jpg?v=1383159624" class=
+    "fyre-user-avatar" alt="Ladiesman17" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">Ladiesman17</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>I enjoyed reading this article, I can see J. Carmack "smart-ass" words all over his face, I like his ego :D</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/f2d234bedf768550d75ad8835f89ad57/50.jpg?v=1382776169" class=
+    "fyre-user-avatar" alt="CloudXentar" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">CloudXentar</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>All this damn developers are excited for the new console/handheld but what about the costumers? It's not like we spawn money from our ass and that we buy everything the developers make.</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/5bcc61f755bc5ab4506805c4d690028b/50.jpg" class=
+    "fyre-user-avatar" alt="hush404" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">hush404</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>@fireycheeseball - Not even close. Jacking the equivalent to a PS1 controller into a phone for some android games (those games have to support it) isn't anywheres the same as what Vita is doing.</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/3b26d07ba2b3b3774cebb2e704ac676f/50.jpg?v=1401604754" class=
+    "fyre-user-avatar" alt="Basinboy" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">Basinboy</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>Very nice read, I agree with his concerns about the Wii U and the Vita, although I do think there is a stark difference in what mobile games aim to offer and the way they're being presented as opposed to dedicated handheld titles which will allow for the Vita to be a huge success.
+
+@Gamer_4_Fun
+Completely agree, hadn't considered API limiting PC development before.  Great insight.</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://gravatar.com/avatar/f389f22bb9f271d6f18f48bd60cb4576/?s=50&amp;d=http://avatars.fyre.co/a/anon/50.jpg" class=
+    "fyre-user-avatar" alt="fireycheeseball" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">fireycheeseball</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>@hush404 xperia play</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/5bcc61f755bc5ab4506805c4d690028b/50.jpg" class=
+    "fyre-user-avatar" alt="hush404" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">hush404</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>I honestly disagree with his views on the Vita... simply because... gamers exist and crave more than simple games with lacking touchscreen controls. To me, my smartphone is a quick distraction, I can fling birds at pigs for a bit, direct some air traffic to landing for a few more minutes and then go check on facebook. Having a dedicate gaming handheld like Vita means much more to me that those silly time waster games on a smartphone and I don't care where the technology goes, you're still going to be lacking the proper buttons and dedicated system to run decent games on a smartphone.</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/f469c188301eed69aafd17525364580a/50.jpg?v=1384421784" class=
+    "fyre-user-avatar" alt="Franzkill" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">Franzkill</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>lol how many times have they used that picture for him!</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/52ca383afc85edffb811f584e03c5ee9/50.jpg" class=
+    "fyre-user-avatar" alt="Froboywest" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">Froboywest</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>Holy Crap its Sebastian Shaw!</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/dee2f530abc3e4bb1691a4921571314f/50.jpg?v=1394470820" class=
+    "fyre-user-avatar" alt="Zophar87" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">Zophar87</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>John Carmack is so modest and is truly a pioneer of the video game industry. He ranks up with there with great minds like Shigeru Miyamoto. Great interview GS. I look forward to Rage later this year.</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/ff58789e3b64cfd7ad0ffba24124f531/50.jpg" class=
+    "fyre-user-avatar" alt="chicNstu902" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">chicNstu902</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>Great interview, refeshing to hear some honest answers to some direct questions. Not the usual side stepping. I'm rooting for Rage & can't wait to get my hands on it. Well done John & thanks for the interview Gamespot.</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/cb2b4ba8ae992b6d3d6fe2e0c4daa4dc/50.jpg" class=
+    "fyre-user-avatar" alt="Staeksauce" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">Staeksauce</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>Anyone else think john carmack looks like pistola all grown up?</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/cc3cfb3ac19b3bca3f5fe2b5a6168a1a/50.jpg?v=1401833592" class=
+    "fyre-user-avatar" alt="Gamer_4_Fun" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">Gamer_4_Fun</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>"I don't have to go to board of directors meetings or talk about board strategy things. So, I've actually gotten to program more in the last year and a half than I did the year and a half before that. " - that is dedication.</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/2321c37d61d2d28bf956f5acfd92817b/50.jpg" class=
+    "fyre-user-avatar" alt="Koushin" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">Koushin</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>Yes. Great job Gamespot on this interview. Very impressive. I love Carmack's honesty and thoughtful thinking about how he views PC gaming and console gaming.
+
+Can't wait for RAGE and his future projects (Doom 4 and RAGE 2).</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/cc3cfb3ac19b3bca3f5fe2b5a6168a1a/50.jpg?v=1401833592" class=
+    "fyre-user-avatar" alt="Gamer_4_Fun" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">Gamer_4_Fun</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>He is my idol in videogame industry, all hail carmack! I also learned alot from this article, API restricting access to hardware on PCs, alot of juice goes to waste.</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/f592d9f1466e8351aeb67bb498fa7210/50.jpg" class=
+    "fyre-user-avatar" alt="telefanatic" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">telefanatic</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>I want some Android games.</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/799a2b2a55836abcef01505f9981cbd5/50.jpg" class=
+    "fyre-user-avatar" alt="GamerOfLove" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">GamerOfLove</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>I want a Quake 1 remake!</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/c18e6f6c130bd1555eac08b880035e37/50.jpg?v=1401833482" class=
+    "fyre-user-avatar" alt="trollkind" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">trollkind</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>Awesome interview. Nice to have developers with insight, that are open minded and tell you what they think instead of some super excited marketing guy that just tells you twenty times how fantastic their product is. Good read. :)</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/c4d1c81bfe1e0fea8ad427061e5fe4d8/50.jpg?v=1383654396" class=
+    "fyre-user-avatar" alt="icewindy" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">icewindy</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>doom 4, we all are waiting!</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/f0fcbe3b2fa3bceca9236b5a7e35626e/50.jpg?v=1406797387" class=
+    "fyre-user-avatar" alt="parkurtommo" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">parkurtommo</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>he I still remember when id was bought by zenimax, lol that was a long time ago...</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/a574f44648904274b1615dc0bfc678aa/50.jpg" class=
+    "fyre-user-avatar" alt="64-bit" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">64-bit</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>what in the world, just make a video interview. is it that hard? or you chat by messenger?</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/dbf36000b5849a88d97e2d5e5142dae9/50.jpg" class=
+    "fyre-user-avatar" alt="Brokenhope69" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">Brokenhope69</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>I think Irrational, id and Human Head should get together and make System Shock 3 or a reboot/remake of System Shock 2 using id Tech 5.</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/dbf36000b5849a88d97e2d5e5142dae9/50.jpg" class=
+    "fyre-user-avatar" alt="Brokenhope69" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">Brokenhope69</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>The other John is making Prey 2 which is also being published by Bethesda. He owns Human Head and did the first Prey as well. Do your research first.</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/dbf36000b5849a88d97e2d5e5142dae9/50.jpg" class=
+    "fyre-user-avatar" alt="Brokenhope69" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">Brokenhope69</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>Best sellers from id in the last 20 years? What drugs are you on? Wolfenstein 3D, Doom, Doom II, Final Doom, Quake, Quake II, Doom 3 and now Rage. I don't think id has ever done a game that wasn't critically acclaimed, best selling or revolutionary.</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/8884f477cf1676b4c3da6b264733046d/50.jpg" class=
+    "fyre-user-avatar" alt="the_accolade" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">the_accolade</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>he kinda looks like Kevin Bacon</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/9629409f7eb96b0e398cdf0f41cf2baa/50.jpg" class=
+    "fyre-user-avatar" alt="Ranma_X_basic" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">Ranma_X_basic</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>Wonder if we'll get another game in the Quake Franchise!!! and yes i want Doom 4 please lol.</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/56dd8da410285dd7f3a773b1a7beecc6/50.jpg" class=
+    "fyre-user-avatar" alt="zync-" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">zync-</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>Vita is a great step</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/a0b8d056f8ad7b03785561dd303975b2/50.jpg" class=
+    "fyre-user-avatar" alt="beefalo" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">beefalo</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>I always like John Carmack interviews but I find it funny that he effectively praises the Wii U and blasts the Vita. It's true that smartphones will catch up to its power at some point, but the thing that makes the Vita always useful is the controls. Not only does it have a touchscreen and gyro like smart phones, but it also has buttons, dual analog sticks, dpad, shoulder buttons and a touch panel on the back. The biggest difference between casual and hardcore games is degree of control. This is why I am excited about the Vita, it basically gives every control option possible(short of a mouse), which allows for the greatest flexibility and degree of control in games.</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/67731313ef2063812f824b0527b08519/50.jpg" class=
+    "fyre-user-avatar" alt="TheVGamer" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">TheVGamer</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>Wow, 7 years... Damn that's long!</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/4d3aca31efcc13e9365ef3e9e80dda36/50.jpg" class=
+    "fyre-user-avatar" alt="dawgrejectx" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">dawgrejectx</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>name one best seller in the top 10 from ID games in the last 20 years. none.</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/4d3aca31efcc13e9365ef3e9e80dda36/50.jpg" class=
+    "fyre-user-avatar" alt="dawgrejectx" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">dawgrejectx</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>Don't like ID games there to worried about  making games look good and being graphical trendsetters, i mean rage got delayed and took forever to make and he's talking about Rage2? wich won't be out for 10 years? should be focused on releasing a good game John, all your games suck and only cult followers buy them.</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/f76c7673097fe192d8b99976579f4c78/50.jpg" class=
+    "fyre-user-avatar" alt="kwanzudood" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">kwanzudood</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>@TexasRay
+
+That's a friggin genius combination.  I think if they developed BioRage: Infinite Hell on Earth, I think it would just drive our world's population mad.</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/ca0588cc5e7786ea7cb1150a28c560d0/50.jpg?v=1405637364" class=
+    "fyre-user-avatar" alt="KingOfTheNubeis" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">KingOfTheNubeis</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>"DA NA,DA DA NA! DA NA NA NA NA NA NAAA! DA NA , DA NA  NA NA! DA NA NA NA NA NAA!"
+DOOM is back..and the sound track of  a generation of gamers plays in my head ;)</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/d92e522e6b1ac677939f561df41b2aee/50.jpg" class=
+    "fyre-user-avatar" alt="mikeqwerty6" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">mikeqwerty6</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>John Carmack is a legend. The king of fps as far as I'm concerned. I plan on getting Rage, Doom 4 (hell yeah) and Rage 2. Oh, and I can't forget about Skyrim, that looks incredible!</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/5a9151932e55e71a45f9d8af6b4fa34a/50.jpg" class=
+    "fyre-user-avatar" alt="ash162" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">ash162</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>if u read b/w the lines there r some interesting things here:
+- handhelds have a decreased life span and will be a liability in the future due to increasing smartphone power
+- sony made a good move with the hardware powerful vita to avoid the above scenario - motion gaming is a gimmick
+- wii is crap for hardcore gaming
+-zenimax is pressuring id to make aaa titles only(which is not good for creativity's sake)
+- even he is excited about skyrim :)
+- buy rage this october:)</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/17a6ad5fab173d3407423dc96af491c6/50.jpg" class=
+    "fyre-user-avatar" alt="lowkey254" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">lowkey254</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>I like the fact that he's focused on gaming and not the corporate side of things.</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+            
+<article class="fyre-comment-article">
+  <div class="fyre-comment-wrapper">
+  
+  
+  
+  <div class="fyre-comment-user">
+    <a class="fyre-comment-author"><img src="http://avatars.fyre.co/a/137/9f34489402b9b97003e8258b450d4437/50.jpg?v=1384550642" class=
+    "fyre-user-avatar" alt="Jipset" /></a>
+
+    <div class="fyre-comment-socialsync fyre-comment-from-livefyre"></div>
+  </div>
+    
+  <header class="fyre-comment-head">
+    <a class="fyre-comment-username">Jipset</a> 
+    
+    
+    <span class="fyre-comment-user-rating" style="display: none;">5pts</span>
+    <span class="fyre-comment-like" style="float: right;">
+      
+    </span>
+    
+  </header>
+  
+  <section class="fyre-comment-body">
+    <div class="fyre-comment">
+      <p><p>30 demons? Sounds like Doom might go back to it's roots.</p></p>
+    </div>
+    
+  </section>
+
+  <footer class="fyre-comment-footer">
+  </footer>
+  </div>
+  <div class="fyre-comment-divider"><div class="fyre-comment-divider"></div></div>
+
+  
+    
+  <div class="fyre-comment-replies fyre-comment-container fyre-comment-replies-indent">
+  
+  </div>
+</article>
+
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div><!-- /FlyLivefyreBundle:Livefyre:conversationBootstrap:1100-6318725 -->
+  </div>
+
+                                          </div>
+      <aside class="secondary-content span4 js-sticky-hold">
+                    <div id="mpu_top-wrap" class="mapped-ad mapped-mpu_top mapped-mpu_top-dart" ><div id="mpu_top" class="ad-wrap ad-wrap-mpu_top"><script type="text/javascript">
+        (function (c) {
+          "use strict";
+          var cmd = c.displayAdCmd || [];
+          cmd.push('mpu_top');
+          c.displayAdCmd = cmd;
+        })(this);
+      </script></div></div>                        <div class="js-sticky-aside">
+
+          
+
+
+
+<div class="pod pod-recirc pod-popular hide-mobile">
+
+      
+  
+<header class="pod-header pod-header--contain pod-header--has-rhythm">
+  <div class="pod-header__item">
+    <div class="pod-title">
+      <h4>More News</h4>
+            <span class="pod-div"></span>
+    </div>
+  </div>
+  </header>
+  
+      <div class="pod-recirc__content">
+                                        
+              
+<article class="media media--small">
+  <a href=/videos/gs-news-top-5-elite-dangerous-drama-artist-to-spen/2300-6422430/ data-click-track-id=related-rightsidebar-slot01 onclick=s_objectID=&#039;related-rightsidebar-slot01&#039;; class="js-event-tracking" data-promo-id="4208" data-pinned="1" data-top-slot-allowed="1" data-event-tracking="Tracking|news_article|MoreFrom|1">
+    <div class="align-vertical--contain">
+      <figure class="media-figure align-vertical--child">
+        <div class="media-img">
+                      <img src="http://static3.gamespot.com/uploads/screen_tiny/172/1720905/2740384-gsnt5_nov21_20141121.jpg" alt="GS News Top 5 - Elite Dangerous Drama; Artist To Spend 28 Days In VR?" />
+                  </div>
+      </figure>
+      <div class="media-body align-vertical--child">
+                <h3 class="media-title">GS News Top 5 - Elite Dangerous Drama; Artist To Spend 28 Days In VR?
+          
+        </h3>
+      </div>
+    </div>
+  </a>
+</article>
+                                                
+              
+<article class="media media--small">
+  <a href=/articles/telltale-s-game-of-thrones-hits-in-december-pc-req/1100-6423796/ data-click-track-id=related-rightsidebar-slot02 onclick=s_objectID=&#039;related-rightsidebar-slot02&#039;; class="js-event-tracking" data-promo-id="4221" data-pinned="0" data-top-slot-allowed="1" data-event-tracking="Tracking|news_article|MoreFrom|2">
+    <div class="align-vertical--contain">
+      <figure class="media-figure align-vertical--child">
+        <div class="media-img">
+                      <img src="http://static4.gamespot.com/uploads/screen_tiny/1179/11799911/2742431-telltalegot.jpg" alt="Telltale&#039;s Game of Thrones Hits In December, PC Requirements Released" />
+                  </div>
+      </figure>
+      <div class="media-body align-vertical--child">
+                <h3 class="media-title">Telltale&#039;s Game of Thrones Hits In December, PC Requirements Released
+          
+        </h3>
+      </div>
+    </div>
+  </a>
+</article>
+                                                
+              
+<article class="media media--small">
+  <a href=/articles/check-out-new-batman-arkham-knight-gameplay-footag/1100-6423791/ data-click-track-id=related-rightsidebar-slot03 onclick=s_objectID=&#039;related-rightsidebar-slot03&#039;; class="js-event-tracking" data-promo-id="4220" data-pinned="1" data-top-slot-allowed="1" data-event-tracking="Tracking|news_article|MoreFrom|3">
+    <div class="align-vertical--contain">
+      <figure class="media-figure align-vertical--child">
+        <div class="media-img">
+                      <img src="http://static5.gamespot.com/uploads/screen_tiny/536/5360430/2742489-untitled-1.jpg" alt="Check Out New Batman: Arkham Knight Gameplay Footage" />
+                  </div>
+      </figure>
+      <div class="media-body align-vertical--child">
+                <h3 class="media-title">Check Out New Batman: Arkham Knight Gameplay Footage
+          
+        </h3>
+      </div>
+    </div>
+  </a>
+</article>
+                                                
+              
+<article class="media media--small">
+  <a href=/articles/halo-master-chief-collection-update-inadvertently-/1100-6423786/ data-click-track-id=related-rightsidebar-slot04 onclick=s_objectID=&#039;related-rightsidebar-slot04&#039;; class="js-event-tracking" data-promo-id="4219" data-pinned="1" data-top-slot-allowed="1" data-event-tracking="Tracking|news_article|MoreFrom|4">
+    <div class="align-vertical--contain">
+      <figure class="media-figure align-vertical--child">
+        <div class="media-img">
+                      <img src="http://static1.gamespot.com/uploads/screen_tiny/1365/13658182/2742406-masterchiefcollection_1920u_20141124.jpg" alt="Halo Master Chief Collection Update Inadvertently Adds More Bugs" />
+                  </div>
+      </figure>
+      <div class="media-body align-vertical--child">
+                <h3 class="media-title">Halo Master Chief Collection Update Inadvertently Adds More Bugs
+          
+        </h3>
+      </div>
+    </div>
+  </a>
+</article>
+                                                
+              
+<article class="media media--small">
+  <a href=/articles/far-cry-4-update-addresses-ps4-and-ps3-bugs-and-er/1100-6423787/ data-click-track-id=related-rightsidebar-slot05 onclick=s_objectID=&#039;related-rightsidebar-slot05&#039;; class="js-event-tracking" data-promo-id="4222" data-pinned="0" data-top-slot-allowed="1" data-event-tracking="Tracking|news_article|MoreFrom|5">
+    <div class="align-vertical--contain">
+      <figure class="media-figure align-vertical--child">
+        <div class="media-img">
+                      <img src="http://static2.gamespot.com/uploads/screen_tiny/1365/13658182/2732189-fc4_screen_pvp_bear_attack_301014_5pm_paristime_1414685442.jpg" alt="Far Cry 4 Update Addresses PS4 and PS3 Bugs and Errors" />
+                  </div>
+      </figure>
+      <div class="media-body align-vertical--child">
+                <h3 class="media-title">Far Cry 4 Update Addresses PS4 and PS3 Bugs and Errors
+          
+        </h3>
+      </div>
+    </div>
+  </a>
+</article>
+                                                
+                            
+<article class="media media--small">
+  <a href=http://pubads.g.doubleclick.net/gampad/clk?id=212563089&amp;iu=/8264/aw-cbsi/tracking data-click-track-id=related-rightsidebar-slot06  class="js-event-tracking" data-promo-id="6422409" data-event-tracking="Tracking|news_article|MoreFrom|6">
+    <div class="align-vertical--contain">
+      <figure class="media-figure align-vertical--child">
+        <div class="media-img">
+                      <img src="http://static1.gamespot.com/uploads/screen_tiny/1365/13658182/2739214-aimdownsights_thumb1080_20141120.jpg" alt="Aim Down Sights - Best Way To Use The Exo-Suit" />
+                  </div>
+      </figure>
+      <div class="media-body align-vertical--child">
+                  <div class="media-superscript--sponsored">Promoted</div>
+                <h3 class="media-title">Aim Down Sights - Best Way To Use The Exo-Suit
+              
+      <img class="impression-tracker" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="http://ad.doubleclick.net/N8264/ad/aw-cbsi/tracking;sz=1x1;lineid=212562969;vguid=[vguid];ord=[timestamp]?" alt="">
+          </h3>
+      </div>
+    </div>
+  </a>
+</article>
+
+                  </div>
+  
+        </div>
+
+    
+    
+    <div id="mpu_bottom-wrap" class="mapped-ad mapped-mpu_bottom mapped-mpu_bottom-dart" ><div id="mpu_bottom" class="ad-wrap ad-wrap-mpu_bottom"><script type="text/javascript">
+        (function (c) {
+          "use strict";
+          var cmd = c.displayAdCmd || [];
+          cmd.push('mpu_bottom');
+          c.displayAdCmd = cmd;
+        })(this);
+      </script></div></div>
+  </div>
+                                  </aside>
+                </div>
+          </div>
+
+      </div>
+    </div>
+  </div>
+              <div id="leader_bottom-wrap" class="mapped-ad mapped-leader_bottom mapped-leader_bottom-dart" ><div id="leader_bottom" class="ad-wrap ad-wrap-leader_bottom"><script type="text/javascript">
+        (function (c) {
+          "use strict";
+          var cmd = c.displayAdCmd || [];
+          cmd.push('leader_bottom');
+          c.displayAdCmd = cmd;
+        })(this);
+      </script></div></div>          </div>
+
+    <footer id="footer" class="mastfooter" role="complimentary"><div class="container row"><section class="footer-network"><span>© 2014 CBS Interactive Inc. All rights reserved.</span><a href=http://legalterms.cbsinteractive.com/privacy data-click-track-id=coreFooterda4470b181a10eaaf798d53292e20e9f >Privacy Policy</a><a href=http://legalterms.cbsinteractive.com/adchoice data-click-track-id=coreFooterd0ef54dc7b4bd5af4d0d47768c0149d2 >Ad Choice</a><a href=http://legalterms.cbsinteractive.com/terms-of-use data-click-track-id=coreFooterae5239e33c8b2b064bed547264e17270 >Terms of Use</a><a href=/help/ data-click-track-id=coreFooter7ab4821d5304ef493d0218e67086f202 >Help</a><a href=http://www.cbsinteractive.com/advertise data-click-track-id=coreFooterf4f4584bf5208accac6e12a75b4f07be >Advertise</a></section><section class="footer-links hide-mobile"><ul><li><span>More Sites</span></li><li><a href=http://www.giantbomb.com/ data-click-track-id=coreFooter3a1bbd3fdcb01d23ace29fff795ee322 ><i class="footer-social__item footer_logo_gb"></i>giantbomb.com</a></li><li><a href=http://www.ongamers.com/ data-click-track-id=coreFooterf814796392114eec3b89e98ea77f1da8 ><i class="footer-social__item footer_logo_og"></i>ongamers.com</a></li><li><a href=http://www.gamefaqs.com/ data-click-track-id=coreFooter513afe56b1e5b1e51f8967165dd9efe1 ><i class="footer-social__item footer_logo_gf"></i>gamefaqs.com</a></li><li><a href=http://www.metacritic.com/ data-click-track-id=coreFooter323cda0410385e65172fd046e150b979 ><i class="footer-social__item footer_logo_mc"></i>metacritic.com</a></li><li><a href=http://www.gamerankings.com/ data-click-track-id=coreFooter43a32ff31aed1806d581fb7a905b1597 ><i class="footer-social__item footer_logo_gr"></i>gamerankings.com</a></li></ul><ul><li><span>Reviews</span></li><li><a href=http://www.gamespot.com/reviews/ data-click-track-id=footer-reviews1 >Latest Reviews</a></li><li><a href=/reviews/?platform=PC data-click-track-id=footer-reviews2 >PC</a></li><li><a href=/reviews/?platform=PS4 data-click-track-id=footer-reviews3 >PS4</a></li><li><a href=/reviews/?platform=XONE data-click-track-id=footer-reviews4 >Xbox One</a></li><li><a href=/reviews/?platform=WiiU data-click-track-id=footer-reviews5 >Wii U</a></li></ul><ul><li><span>News</span></li><li><a href=http://www.gamespot.com/news/ data-click-track-id=footer-news1 >Latest News</a></li><li><a href=/news/?platform=PC data-click-track-id=footer-news2 >PC</a></li><li><a href=/news/?platform=PS4 data-click-track-id=footer-news3 >PS4</a></li><li><a href=/news/?platform=XONE data-click-track-id=footer-news4 >Xbox One</a></li><li><a href=/news/?platform=WiiU data-click-track-id=footer-news5 >Wii U</a></li></ul><ul><li><span>Shows</span></li><li><a href=http://www.gamespot.com/shows/aim-down-sights/ data-click-track-id=coreFooterVideoShow >Aim Down Sights</a></li><li><a href=http://www.gamespot.com/shows/gsnews/ data-click-track-id=coreFooterVideoShow1 >GameSpot News</a></li><li><a href=http://www.gamespot.com/shows/in-2-minutes/ data-click-track-id=coreFooterVideoShow2 >In 2 Minutes</a></li><li><a href=http://www.gamespot.com/shows/New_Releases/ data-click-track-id=coreFooterVideoShow3 >New Releases</a></li><li><a href=http://www.gamespot.com/shows/now-playing/ data-click-track-id=coreFooterVideoShow4 >Now Playing</a></li><li><a href=http://www.gamespot.com/shows/reality-check/ data-click-track-id=coreFooterVideoShow5 >Reality Check</a></li><li><a href=http://www.gamespot.com/shows/the-gist/ data-click-track-id=coreFooterVideoShow6 >The Gist</a></li><li><a href=http://www.gamespot.com/shows/the-lobby/ data-click-track-id=coreFooterVideoShow7 >The Lobby</a></li><li><a href=http://www.gamespot.com/shows/the-point/ data-click-track-id=coreFooterVideoShow8 >The Point</a></li><li><a href=http://www.gamespot.com/shows/top-5-skyrim-mods/ data-click-track-id=coreFooterVideoShow9 >Top 5 Skyrim Mods of the Week</a></li></ul><ul><li><span>Videos</span></li><li><a href=http://www.gamespot.com/videos/feature/ data-click-track-id=coreFooterVideoCategory >Features</a></li><li><a href=http://www.gamespot.com/videos/gameplay/ data-click-track-id=coreFooterVideoCategory1 >Gameplay</a></li><li><a href=http://www.gamespot.com/videos/preview/ data-click-track-id=coreFooterVideoCategory2 >Previews</a></li><li><a href=http://www.gamespot.com/videos/review/ data-click-track-id=coreFooterVideoCategory3 >Reviews</a></li><li><a href=http://www.gamespot.com/videos/trailer/ data-click-track-id=coreFooterVideoCategory4 >Trailers</a></li></ul><ul><li><span>Community</span></li><li><a href=http://www.gamespot.com/forums/ data-click-track-id=coreFooterForumLatestTopicList >Forums</a></li><li><a href=http://www.gamespot.com/community/ data-click-track-id=coreFooterCommunityFrontDoor >Community Blog</a></li><li><a href=http://facebook.com/gamespot data-click-track-id=footer-facebook  target="_blank" rel="nofollow"><i class="icon icon-facebook-sign"></i> facebook.com/gamespot</a></li><li><a href=http://twitter.com/gamespot data-click-track-id=footer-twitter  target="_blank" rel="nofollow"><i class="icon icon-twitter"></i> twitter.com/gamespot</a></li><li><a href=http://youtube.com/gamespot data-click-track-id=footer-youtube  target="_blank" rel="nofollow"><i class="icon icon-play"></i> youtube.com/gamespot</a></li><li><a href=/feeds data-click-track-id=footer-rss  title="RSS Feeds"><i class="icon icon-rss"></i> RSS</a></li></ul></section><section class="footer-site"><a href=http://www.gamespot.com/ data-click-track-id=coreFooterFrontDoor  class="footer-logo"><span class="ir">GameSpot</span></a></section></div></footer>
+    </div>
+
+                  
+  
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
+    
+                  
+                <script src="http://static3.gamespot.com/js/compiled/all.js?ac0a4c43e7e8e651d3b51c3c67cc8f1a" type="text/javascript"></script>
+      
+    
+  
+
+          
+    
+    <script id="imageInfoBarTemplate" type="text/template">
+      <a href="<%= profileUrl %>" class="avatar img"><img src="<%= avatar %>" /></a>
+      <div>
+        <a href="<%= profileUrl %>"><%= author %></a> uploaded on <%= dateCreated %>.
+      </div>
+    </script>
+
+    <script id="imageCommentsTemplate" type="text/template">
+      <li>
+        <a href="<%= user.url %>" class="avatar img">
+          <img src="<%= user.img %>" />
+        </a>
+        <div>
+          <a href="<%= user.url %>"><%= user.username %></a> <%= body %>
+        </div>
+      </li>
+    </script>
+
+    <script id="imageFilmstripTemplate" type="text/template">
+      <li>
+        <a href="#imageViewer<%= id %>" data-ref-id="<%= id %>"><img src="http://gs.cbsimg.net/b.gif" data-img-src="<%= thumbnail %>" /></a>
+      </li>
+    </script>
+  
+
+        <div id="js-filmstrip" class="filmstrip filmstrip-with-ads is-hidden" itemscope><meta id="image_view-tracking-dw"
+        class="js-post-render-tracking-consumer image_view-tracking-settings"
+        data-tracking-service="dw"
+        itemprop="image_view-tracking-dw"
+        content="{&quot;pageParams&quot;:{&quot;siteid&quot;:&quot;6&quot;,&quot;ptid&quot;:&quot;6036&quot;,&quot;onid&quot;:null,&quot;ednm&quot;:&quot;{edition}&quot;,&quot;ursuid&quot;:&quot;{ursuid}&quot;,&quot;regSilo&quot;:&quot;2&quot;,&quot;viewguid&quot;:&quot;{guid}&quot;,&quot;rsid&quot;:&quot;cbsigamespotsite&quot;,&quot;prodtypid&quot;:&quot;8&quot;,&quot;pagetype&quot;:&quot;news_article&quot;,&quot;assetguid&quot;:&quot;1100-6318725&quot;,&quot;assettitle&quot;:&quot;E3 2011: John Carmack talks Wii U, PlayStation Vita, and next-gen Rage&quot;,&quot;assettype&quot;:&quot;Article&quot;,&quot;author&quot;:[&quot;gs-2100-822086&quot;],&quot;pid&quot;:30930,&quot;topicbrcrm&quot;:&quot;News|News Article&quot;},&quot;cleargifSrc&quot;:&quot;http:\/\/dw.cbsi.com\/clear\/c.gif?ptid=6036&amp;ednm=%7Bedition%7D&amp;ursuid=%7Bursuid%7D&amp;regSilo=2&amp;viewguid=%7Bguid%7D&amp;rsid=cbsigamespotsite&amp;prodtypid=8&amp;pagetype=news_article&amp;assetguid=1100-6318725&amp;assettitle=E3+2011%3A+John+Carmack+talks+Wii+U%2C+PlayStation+Vita%2C+and+next-gen+Rage&amp;assettype=Article&amp;author%5B0%5D=gs-2100-822086&amp;pid=30930&amp;topicbrcrm=News%7CNews+Article&amp;sid=6&amp;ts=1416862355&quot;}"/><meta id="image_view-tracking-ga"
+        class="js-post-render-tracking-consumer image_view-tracking-settings"
+        data-tracking-service="ga"
+        itemprop="image_view-tracking-ga"
+        content="{&quot;custom&quot;:{&quot;PageType&quot;:{&quot;index&quot;:&quot;1&quot;,&quot;name&quot;:&quot;PageType&quot;,&quot;value&quot;:&quot;6036&quot;,&quot;scope&quot;:&quot;3&quot;},&quot;UserType&quot;:{&quot;index&quot;:&quot;2&quot;,&quot;name&quot;:&quot;UserType&quot;,&quot;value&quot;:&quot;{gaUserType}&quot;,&quot;scope&quot;:&quot;1&quot;}},&quot;account&quot;:&quot;UA-22577913-1&quot;}"/><meta id="image_view-tracking-om"
+        class="js-post-render-tracking-consumer image_view-tracking-settings"
+        data-tracking-service="om"
+        itemprop="image_view-tracking-om"
+        content="{&quot;brand&quot;:&quot;GameSpot&quot;,&quot;sid&quot;:&quot;gamespot&quot;,&quot;rsids&quot;:&quot;cbsigamespotsite,cbsicbsiall&quot;,&quot;user_status&quot;:&quot;{userStatus}&quot;,&quot;urs_id&quot;:&quot;{ursuid}&quot;,&quot;edition&quot;:&quot;{edition}&quot;,&quot;site_type&quot;:&quot;{siteType}&quot;,&quot;anon_id&quot;:&quot;{xclgfbrowser}&quot;,&quot;url&quot;:&quot;D=g&quot;,&quot;user_agent&quot;:&quot;D=User-Agent&quot;,&quot;page_type_id&quot;:6052,&quot;page_name&quot;:&quot;gs:\/articles\/e3-2011-john-carmack-talks-wii-u-playstation-vita-and-next-gen-rage\/1100-6318725\/&quot;,&quot;view_guid&quot;:&quot;{guid}&quot;,&quot;ab_test&quot;:&quot;{abTestLabel}&quot;,&quot;page_type&quot;:&quot;image&quot;,&quot;page_version&quot;:&quot;default&quot;,&quot;channel&quot;:&quot;News&quot;,&quot;hierarchy&quot;:&quot;News|News Article&quot;,&quot;platform&quot;:[&quot;PC&quot;,&quot;PS3&quot;,&quot;Xbox 360&quot;,&quot;PlayStation Vita&quot;,&quot;Wii U&quot;],&quot;content_source&quot;:&quot;CBSi&quot;,&quot;content_title&quot;:&quot;E3 2011: John Carmack talks Wii U, PlayStation Vita, and next-gen Rage&quot;,&quot;author_ids&quot;:[&quot;gs-2100-822086&quot;],&quot;product_id&quot;:[&quot;gs-5000-30930&quot;,&quot;gs-5000-96259&quot;,&quot;gs-5000-106308&quot;],&quot;content_type&quot;:&quot;image&quot;,&quot;content_guid&quot;:&quot;gs-1100-6318725&quot;,&quot;category&quot;:[&quot;News&quot;],&quot;collection&quot;:null,&quot;subcollection&quot;:null}"/><meta id='image_view-ad-settings'
+          class='js-post-render-tracking-consumer page-event-ad-settings'
+          itemprop="page-event-ad-settings"
+          content="{&quot;page_event_name&quot;:&quot;image_view&quot;,&quot;mapped_units&quot;:{&quot;overlay_mpu_top&quot;:{&quot;size&quot;:[[300,250]],&quot;target&quot;:{&quot;pos&quot;:&quot;top&quot;,&quot;ptype&quot;:&quot;image_viewer&quot;},&quot;on_event&quot;:&quot;image_view&quot;},&quot;overlay_leader_top&quot;:{&quot;size&quot;:[[970,66],[728,90]],&quot;target&quot;:{&quot;pos&quot;:&quot;top&quot;,&quot;ptype&quot;:&quot;image_viewer&quot;},&quot;on_event&quot;:&quot;image_view&quot;}}}"
+    /><div id="js-image-mask" class="image-mask"></div><div id="js-image-ad-leader" class="image-viewer-ad image-viewer-leader"><div id="overlay_leader_top-wrap" class="mapped-ad mapped-overlay_leader_top mapped-overlay_leader_top-dart" ><div id="overlay_leader_top" class="ad-wrap ad-wrap-overlay_leader_top" data-ad-event="image_view"><script type="text/javascript">
+        (function (c) {
+          "use strict";
+          var cmd = c.displayAdCmd || [];
+          cmd.push('overlay_leader_top');
+          c.displayAdCmd = cmd;
+        })(this);
+      </script></div></div></div><span id="js-image-close" class="image-control image-close" title="Close Viewer"><i class="icon icon-remove"></i></span><div id="js-image-pane" class="image-pane"><h3 id="js-image-title" class="image-title"></h3><img src="" id="imageSource" alt="" /><div id="js-image-commands-tip" class="image-commands-tip image-commands-tip-hide"><p>Use your keyboard!</p><ul class="keyboard light"><li><i class="icon icon-arrow-left"></i></li><li><i class="icon icon-arrow-right"></i></li><li><i class="icon icon-arrow-up"></i></li><li><i class="icon icon-arrow-down"></i></li><li>ESC</li></ul></div><span id="js-image-prev" class="image-control image-prev hidden" title="Previous Image"><i class="icon icon-caret-left"></i></span><span id="js-image-next" class="image-control image-next hidden" title="Next Image"><i class="icon icon-caret-right"></i></span></div><div id="js-side-column" class="image-comments"><div id="js-image-ad-mpu" class="image-viewer-ad image-viewer-mpu"><div id="overlay_mpu_top-wrap" class="mapped-ad mapped-overlay_mpu_top mapped-overlay_mpu_top-dart" ><div id="overlay_mpu_top" class="ad-wrap ad-wrap-overlay_mpu_top" data-ad-event="image_view"><script type="text/javascript">
+        (function (c) {
+          "use strict";
+          var cmd = c.displayAdCmd || [];
+          cmd.push('overlay_mpu_top');
+          c.displayAdCmd = cmd;
+        })(this);
+      </script></div></div></div><ul><li class="upload" id="imageInfo"></li><li class="box login-alert"><p><a href="https://auth.gamespot.com/login/">Log in</a> to comment</p></li></ul><ul class="scroll" id="imageComments"></ul></div><div class="image-strip"><a href="" id="js-image-view-film" class="image-view-film"><span id="js-btn-message" class="caret-message"></span><i id="js-btn-icon" class="icon icon-caret-up"></i></a><div class="number"></div><ul id="js-image-strip"><li id="js-image-strip-load-more"><a href="#" class="more-images"></a></li></ul></div></div>
+            <script src="http://static4.gamespot.com/js/compiled/imageViewer.js?ac0a4c43e7e8e651d3b51c3c67cc8f1a" type="text/javascript"></script>
+      
+  
+  <script src="http://static5.gamespot.com/js/compiled/site.js?ac0a4c43e7e8e651d3b51c3c67cc8f1a" type="text/javascript"></script>
+<!-- BEG: base custom_js -->
+  
+      <script src="http://static1.gamespot.com/js/compiled/articles.js?ac0a4c43e7e8e651d3b51c3c67cc8f1a" type="text/javascript"></script>
+  <!-- END: base custom_js -->
+
+             
+  <meta id="tracking-dw"
+        class="js-post-render-tracking-consumer tracking-settings"
+        data-tracking-service="dw"
+        itemprop="tracking-dw"
+        content="{&quot;pageParams&quot;:{&quot;siteid&quot;:&quot;6&quot;,&quot;ptid&quot;:&quot;6036&quot;,&quot;onid&quot;:null,&quot;ednm&quot;:&quot;{edition}&quot;,&quot;ursuid&quot;:&quot;{ursuid}&quot;,&quot;regSilo&quot;:&quot;2&quot;,&quot;viewguid&quot;:&quot;{guid}&quot;,&quot;rsid&quot;:&quot;cbsigamespotsite&quot;,&quot;prodtypid&quot;:&quot;8&quot;,&quot;pagetype&quot;:&quot;news_article&quot;,&quot;assetguid&quot;:&quot;1100-6318725&quot;,&quot;assettitle&quot;:&quot;E3 2011: John Carmack talks Wii U, PlayStation Vita, and next-gen Rage&quot;,&quot;assettype&quot;:&quot;Article&quot;,&quot;author&quot;:[&quot;gs-2100-822086&quot;],&quot;pid&quot;:30930,&quot;topicbrcrm&quot;:&quot;News|News Article&quot;},&quot;cleargifSrc&quot;:&quot;http:\/\/dw.cbsi.com\/clear\/c.gif?ptid=6036&amp;ednm=%7Bedition%7D&amp;ursuid=%7Bursuid%7D&amp;regSilo=2&amp;viewguid=%7Bguid%7D&amp;rsid=cbsigamespotsite&amp;prodtypid=8&amp;pagetype=news_article&amp;assetguid=1100-6318725&amp;assettitle=E3+2011%3A+John+Carmack+talks+Wii+U%2C+PlayStation+Vita%2C+and+next-gen+Rage&amp;assettype=Article&amp;author%5B0%5D=gs-2100-822086&amp;pid=30930&amp;topicbrcrm=News%7CNews+Article&amp;sid=6&amp;ts=1416862354&quot;}"/>
+
+     
+  <meta id="tracking-ga"
+        class="js-post-render-tracking-consumer tracking-settings"
+        data-tracking-service="ga"
+        itemprop="tracking-ga"
+        content="{&quot;custom&quot;:{&quot;PageType&quot;:{&quot;index&quot;:&quot;1&quot;,&quot;name&quot;:&quot;PageType&quot;,&quot;value&quot;:&quot;6036&quot;,&quot;scope&quot;:&quot;3&quot;},&quot;UserType&quot;:{&quot;index&quot;:&quot;2&quot;,&quot;name&quot;:&quot;UserType&quot;,&quot;value&quot;:&quot;{gaUserType}&quot;,&quot;scope&quot;:&quot;1&quot;}},&quot;account&quot;:&quot;UA-22577913-1&quot;}"/>
+
+     
+  <meta id="tracking-om"
+        class="js-post-render-tracking-consumer tracking-settings"
+        data-tracking-service="om"
+        itemprop="tracking-om"
+        content="{&quot;brand&quot;:&quot;GameSpot&quot;,&quot;sid&quot;:&quot;gamespot&quot;,&quot;rsids&quot;:&quot;cbsigamespotsite,cbsicbsiall&quot;,&quot;user_status&quot;:&quot;{userStatus}&quot;,&quot;urs_id&quot;:&quot;{ursuid}&quot;,&quot;edition&quot;:&quot;{edition}&quot;,&quot;site_type&quot;:&quot;{siteType}&quot;,&quot;anon_id&quot;:&quot;{xclgfbrowser}&quot;,&quot;url&quot;:&quot;D=g&quot;,&quot;user_agent&quot;:&quot;D=User-Agent&quot;,&quot;page_type_id&quot;:&quot;6036&quot;,&quot;page_name&quot;:&quot;gs:\/articles\/e3-2011-john-carmack-talks-wii-u-playstation-vita-and-next-gen-rage\/1100-6318725\/&quot;,&quot;view_guid&quot;:&quot;{guid}&quot;,&quot;ab_test&quot;:&quot;{abTestLabel}&quot;,&quot;page_type&quot;:&quot;news_article&quot;,&quot;page_version&quot;:&quot;default&quot;,&quot;channel&quot;:&quot;News&quot;,&quot;hierarchy&quot;:&quot;News|News Article&quot;,&quot;platform&quot;:[&quot;PC&quot;,&quot;PS3&quot;,&quot;Xbox 360&quot;,&quot;PlayStation Vita&quot;,&quot;Wii U&quot;],&quot;content_source&quot;:&quot;CBSi&quot;,&quot;content_title&quot;:&quot;E3 2011: John Carmack talks Wii U, PlayStation Vita, and next-gen Rage&quot;,&quot;author_ids&quot;:[&quot;gs-2100-822086&quot;],&quot;product_id&quot;:[&quot;gs-5000-30930&quot;,&quot;gs-5000-96259&quot;,&quot;gs-5000-106308&quot;],&quot;content_type&quot;:&quot;article&quot;,&quot;content_guid&quot;:&quot;gs-1100-6318725&quot;,&quot;category&quot;:[&quot;News&quot;],&quot;collection&quot;:null,&quot;subcollection&quot;:null}"/>
+
+        
+                  <script src="http://static2.gamespot.com/js/compiled/trackingWithCT.js?ac0a4c43e7e8e651d3b51c3c67cc8f1a" type="text/javascript"></script>
+          
+  <meta name="trackingEventsLookup" content='[]' />
+  
+  
+    <noscript>
+      <img src="http://dw.cbsi.com/clear/c.gif?ptid=6036&amp;ednm=%7Bedition%7D&amp;ursuid=%7Bursuid%7D&amp;regSilo=2&amp;viewguid=%7Bguid%7D&amp;rsid=cbsigamespotsite&amp;prodtypid=8&amp;pagetype=news_article&amp;assetguid=1100-6318725&amp;assettitle=E3+2011%3A+John+Carmack+talks+Wii+U%2C+PlayStation+Vita%2C+and+next-gen+Rage&amp;assettype=Article&amp;author%5B0%5D=gs-2100-822086&amp;pid=30930&amp;topicbrcrm=News%7CNews+Article&amp;sid=6&amp;ts=1416862354" alt="" class="visuallyhidden">
+    </noscript>
+  
+
+                          
+                              <script src="http://static3.gamespot.com/js/compiled/adsDeferredDfp.js?ac0a4c43e7e8e651d3b51c3c67cc8f1a" type="text/javascript"></script>
+                    
+  <!-- Begin BlueKai Tag --><iframe name="__bkframe" height="0" width="0" frameborder="0" style="height:0; width:0; display:none;" src="javascript:void(0)"></iframe><script type="text/javascript" src="http://tags.bkrtx.com/js/bk-coretag.js"></script><!-- End BlueKai Tag --><meta name='bluekaiParams' content="{&quot;siteId&quot;:3338,&quot;pageParams&quot;:{&quot;anon_id&quot;:&quot;{anon_id}&quot;,&quot;site&quot;:&quot;cbsigamespotsite&quot;,&quot;path&quot;:&quot;aw-gamespot\/news&quot;,&quot;ptype&quot;:&quot;6036&quot;,&quot;game&quot;:&quot;rage-(2011)&quot;,&quot;franchise&quot;:[],&quot;genre&quot;:&quot;&quot;,&quot;con&quot;:[&quot;pc&quot;,&quot;ps3&quot;,&quot;xbox-360&quot;,&quot;playstation-vita&quot;,&quot;wii-u&quot;],&quot;collection&quot;:&quot;&quot;}}" />
+
+  
+    
+
+  
+  
+
+        <hx:include  src="/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DGamespotLivefyreBundle%253ALivefyre%253AuserTokenTag&amp;_hash=nRXDTxfRl9mOlMvB%2BlXQNS3vaXk%3D"></hx:include>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-1.newrelic.com","licenseKey":"afb799a982","applicationID":"2515728","transactionName":"blVaMEAHDUdZVBYMDFcfexFBEgxZF3YQEQpaXF0=","queueTime":0,"applicationTime":1167,"ttGuid":"","agentToken":"","userAttributes":"","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-476.min.js"}</script></body>
+</html>
