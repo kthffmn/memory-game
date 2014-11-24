@@ -1,11 +1,6 @@
 class Programmers
-  attr_reader :programmers
 
-  def initialize
-    @programmers = get_programmers
-  end
-
-  def get_programmers
+  def self.run
     coders = YAML.load_file('./lib/programmers.yml').each_with_object([]) do |k,a| 
       a << {:pic = slugify(k), :name => k}
     end

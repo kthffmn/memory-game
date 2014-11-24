@@ -5,11 +5,11 @@ resources: 5
 level: intermediate
 ---
 
-# Whac A Mole :hammer:
+# Memory Game :video_game:
 
 ## Objectives
 
-You'll be building whac-a-mole game, [demo here](http://kthffmn.github.io/whac-a-mole/). The HTML and CSS has already been completed for you, so your only job will be to add JavaScript code to two files, `game-functions.js` and `game.js`, found in your `public/javascripts/` folder.
+You'll be building memory game game, [demo here](http://kthffmn.github.io/whac-a-mole/). The HTML and CSS has already been completed for you, so your only job will be to add JavaScript code to two files, `game-functions.js` and `game.js`, found in your `public/javascripts/` folder.
 
 ## Instructions
 
