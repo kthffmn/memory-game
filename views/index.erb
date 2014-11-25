@@ -18,21 +18,19 @@
         <h1>Memory Game</h1>
       </div>
 
-      <% @programmers.each do |info_hash| %>
-        <% info_hash.each do |name,info| %>
-          <% info.each do |type, v| %>
-
-            <div class="card">
-              <% if type == :img %>
-                <img id="<%= name %>" src="<%= v %>" class="headshot-card card-back" width="174" height="174">
-              <% else %>
-                <h3 id="<%= name %>" class="name-card card-back"><%= v %></h3>
-              <% end %>
-            </div>
-
+        <% @programmers.each_with_index do |info_hash, i| %>
+          <% info_hash.each do |name,info| %>
+            <% info.each do |type, v| %>
+              <div class="card" id="<%= @colors[(i + @seed) % 5] %>">
+                <% if type == :img %>
+                  <img id="<%= name %>" src="<%= v %>" class="headshot-card card-back" width="170" height="174">
+                <% else %>
+                  <h3 id="<%= name %>" class="name-card card-back"><%= v %></h3>
+                <% end %>
+              </div>
+            <% end %>
           <% end %>
         <% end %>
-      <% end %>
 
     </div><!-- container -->
   </body>
