@@ -6,43 +6,34 @@
     <script src="/javascripts/libraries/jquery-ui.min.js"></script>
     <script src="/javascripts/custom/game-functions.js"></script>
     <script src="/javascripts/custom/game.js"></script>
+    <link href="/stylesheets/normalize.css" rel="stylesheet">
     <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
     <link href="/stylesheets/custom.css" rel="stylesheet">
     <title>Memory Game</title>
   </head>
   <body>
-
     <div class="container">
 
-      <div class="row">
-        <div class="col-md-2"></div>
+      <div class="row title-row">
+        <h1>Memory Game</h1>
       </div>
 
-      <div class="row">
-        <div class="card-table">
-          <table class="table">
-            <tr id="top-row"></tr>
-            <% 3.times do %>
-              <tr id="hole-row">
-                <% 3.times do %>
-                  <td>
-                    <div class="full-width center">
-                      <div class="circle hole">
-                        <div id="mole-num-<%= @i += 1 %>" class="mole inv">
-                          <img src="images/mole.png" class="mole-pic">
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                <% end %>
-              </tr>
-            <% end %>
-          </table>
-        </div>
+      <% @programmers.each do |info_hash| %>
+        <% info_hash.each do |name,info| %>
+          <% info.each do |type, v| %>
 
-        <div class="col-md-2"></div>
-      </div>
-    </div>
+            <div class="card">
+              <% if type == :img %>
+                <img id="<%= name %>" src="<%= v %>" class="headshot-card card-back" width="174" height="174">
+              <% else %>
+                <h3 id="<%= name %>" class="name-card card-back"><%= v %></h3>
+              <% end %>
+            </div>
 
+          <% end %>
+        <% end %>
+      <% end %>
+
+    </div><!-- container -->
   </body>
 </html>
