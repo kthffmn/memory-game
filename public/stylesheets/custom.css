@@ -11,6 +11,15 @@ h1 {
   font-size: 4em;
 }
 
+.winner-box {
+  padding: 10px;
+}
+
+.winning-message {
+  text-align: center;
+  display: none;
+}
+
 .title-row {
   text-align: center;
   font-family: 'Lobster', cursive;

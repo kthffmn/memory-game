@@ -17,28 +17,39 @@
       <div class="row title-row">
         <h1>Memory Game</h1>
       </div>
-        <div class="card-table">
-          <% @programmers.each_with_index do |info_hash, i| %>
-            <% info_hash.each do |name,info| %>
-              <% info.each do |type, v| %>
-                <div class="flip">
-                  <div class="card" data-programmer="<%= name %>" id="<%= @colors[(i + @seed) % 5] %>">
-                    <div class="flipper">
-                      <div class="face front"></div>
-                      <div class="face back">
-                        <% if type == :img %>
-                          <img src="<%= v %>" class="headshot-card" width="170" height="174">
-                        <% else %>
-                          <h3 class="name-card"><%= v %></h3>
-                        <% end %>
-                      </div>
+
+      <div class="row card-table">
+        <% @programmers.each_with_index do |info_hash, i| %>
+          <% info_hash.each do |name,info| %>
+            <% info.each do |type, v| %>
+              <div class="flip">
+                <div class="card" data-programmer="<%= name %>" id="<%= @colors[(i + @seed) % 5] %>">
+                  <div class="flipper">
+                    <div class="face front"></div>
+                    <div class="face back">
+                      <% if type == :img %>
+                        <img src="<%= v %>" class="headshot-card" width="170" height="174">
+                      <% else %>
+                        <h3 class="name-card"><%= v %></h3>
+                      <% end %>
                     </div>
                   </div>
                 </div>
-              <% end %>
+              </div>
             <% end %>
           <% end %>
+        <% end %>
+      </div><!-- card-table -->
+
+      <div class="row center-contents winning-message">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 winner-box" id="<%= @colors.sample %>">
+          <h2>Congratulations!</h2><br>
+          <a class="btn btn-primary" href="/">Play again</a>
         </div>
+        <div class="col-md-4"></div>
+      </div>
+
     </div><!-- container -->
   </body>
 </html>

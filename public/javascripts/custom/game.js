@@ -1,6 +1,8 @@
 $( document ).ready(function() {
 
   var visibleCardNum = 0;
+  var matchedTotal = 0;
+  var cardTotal = $(".card").length;
   var flippedCard;
 
   $('.flip').click(function(){
@@ -18,13 +20,20 @@ $( document ).ready(function() {
           setTimeout(function() {
             $.each([card, flippedCard], function(i, c){
               c.addClass("matched");
+              matchedTotal += 1;
             });
             visibleCardNum = 0;
+            if(matchedTotal == cardTotal) {
+              $(".card-table").hide("explode");
+              setTimeout(function() {
+                $(".winning-message").show();
+              }, 400);
+            }
           }, 325);
         } else {
           setTimeout(function() {
             $.each([card, flippedCard], function(i, c){
-              c.removeClass("flipped")
+              c.removeClass("flipped");
             });
             visibleCardNum = 0;
           }, 1500);
