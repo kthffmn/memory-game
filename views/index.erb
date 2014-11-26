@@ -17,26 +17,28 @@
       <div class="row title-row">
         <h1>Memory Game</h1>
       </div>
-        <% @programmers.each_with_index do |info_hash, i| %>
-          <% info_hash.each do |name,info| %>
-            <% info.each do |type, v| %>
-              <div class="flip">
-                <div class="card" id="<%= @colors[(i + @seed) % 5] %>">
-                  <div class="flipper">
-                    <div class="face front"></div>
-                    <div class="face back">
-                      <% if type == :img %>
-                        <img id="<%= name %>" src="<%= v %>" class="headshot-card" width="170" height="174">
-                      <% else %>
-                        <h3 id="<%= name %>" class="name-card"><%= v %></h3>
-                      <% end %>
+        <div class="card-table">
+          <% @programmers.each_with_index do |info_hash, i| %>
+            <% info_hash.each do |name,info| %>
+              <% info.each do |type, v| %>
+                <div class="flip">
+                  <div class="card" data-programmer="<%= name %>" id="<%= @colors[(i + @seed) % 5] %>">
+                    <div class="flipper">
+                      <div class="face front"></div>
+                      <div class="face back">
+                        <% if type == :img %>
+                          <img src="<%= v %>" class="headshot-card" width="170" height="174">
+                        <% else %>
+                          <h3 class="name-card"><%= v %></h3>
+                        <% end %>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              <% end %>
             <% end %>
           <% end %>
-        <% end %>
+        </div>
     </div><!-- container -->
   </body>
 </html>

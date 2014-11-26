@@ -82,3 +82,11 @@ h1 {
 .name-card {
   margin-top: 92px;
 }
+
+.matched {
+  opacity: 0.3;
+}
+
+.card-table {
+  margin-bottom: 20px;
+}
