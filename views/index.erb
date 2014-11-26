@@ -17,7 +17,6 @@
       <div class="row title-row">
         <h1>Memory Game</h1>
       </div>
-
         <% @programmers.each_with_index do |info_hash, i| %>
           <% info_hash.each do |name,info| %>
             <% info.each do |type, v| %>
@@ -25,18 +24,19 @@
                 <div class="card" id="<%= @colors[(i + @seed) % 5] %>">
                   <div class="flipper">
                     <div class="face front"></div>
-                    <% if type == :img %>
-                      <img id="<%= name %>" src="<%= v %>" class="headshot-card face back" width="170" height="174">
-                    <% else %>
-                      <h3 id="<%= name %>" class="name-card face back"><%= v %></h3>
-                    <% end %>
+                    <div class="face back">
+                      <% if type == :img %>
+                        <img id="<%= name %>" src="<%= v %>" class="headshot-card" width="170" height="174">
+                      <% else %>
+                        <h3 id="<%= name %>" class="name-card"><%= v %></h3>
+                      <% end %>
+                    </div>
                   </div>
                 </div>
               </div>
             <% end %>
           <% end %>
         <% end %>
-
     </div><!-- container -->
   </body>
 </html>

@@ -5,14 +5,14 @@ $( document ).ready(function() {
     card.addClass('flipped');
   });
 
-  function turnDownCards() {
-    if($('.flipped').length > 1) {
-      $(".card").removeClass("flipped");
-    }
-  }
+  // function turnDownCards() {
+  //   if($('.flipped').length > 1) {
+  //     $(".card").removeClass("flipped");
+  //   }
+  // }
 
-  setInterval(function() { 
-    turnDownCards() 
-  }, 2000); 
+  // setInterval(function() { 
+  //   turnDownCards() 
+  // }, 2000); 
 
 });
